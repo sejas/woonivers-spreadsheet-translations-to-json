@@ -80,14 +80,18 @@ function readSpreadSheeetToTranslate(auth) {
   sheets.spreadsheets.values.get(
     {
       spreadsheetId,
-      range: "transtlations"
+      range: "translations"
     },
     (err, res) => {
       if (err) return console.log("--> The API returned an error: " + err)
       const rows = res.data.values
       if (rows.length > 1) {
-        const wooTranslation = new WooTranslate(rows.slice(1))
-        console.log(wooTranslation.toJSON())
+        try {
+          const wooTranslation = new WooTranslate(rows.slice(1))
+          console.log(wooTranslation.toJSON())
+        } catch (error) {
+          console.log("--> Error catched: ", { error })
+        }
       } else {
         console.log("No data found.")
       }
@@ -117,8 +121,10 @@ class WooLang {
     }
   }
   addTrasnlationToSection(section: string, [key, ...row]: string[]) {
-    for (const [index, lang] of this.langKeys) {
-      this.langs[lang][section][key] = row[index]
+    debugger
+    let index = 0
+    for (const lang of this.langKeys) {
+      this.langs[lang][section][key] = row[index++]
     }
   }
 }
@@ -132,11 +138,14 @@ class WooTranslate {
   toJSON() {
     let currentSection = null
     const langsLength = Object.keys(this.wooLangs).length
-    for (const [index, row] of this.rows) {
+    let index = 1
+    for (const row of this.rows) {
+      console.log(`Reading ${index} --- ${row}`)
       const key = row[0]
       switch (row.length) {
         case 0:
           // We've finished
+          console.log("finished ! at ")
           return this.wooLangs.langs
         case 1:
           // create a new section
@@ -145,17 +154,16 @@ class WooTranslate {
           break
         default:
           if (row.length < langsLength) {
-            console.warn(`MISSING TRANSLATION at line ${index + 1}`, { row })
+            console.warn(`MISSING TRANSLATION at line ${index}`, { row })
           }
           if (currentSection) {
             this.wooLangs.addTrasnlationToSection(currentSection, row)
           } else {
-            throw new Error(
-              `Translations without section at line: ${index + 1}`
-            )
+            throw new Error(`Translations without section at line: ${index}`)
           }
           break
       }
+      index++
     }
     // This neve sholud be executed
     throw new Error("Please add a blank line to se the end of the spreadsheet")

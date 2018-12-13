@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently --kill-others \"tsc -w\" \"nodemon dist/index.js --delay 500ms --watch dist/index.js\""
+    "start": "concurrently --kill-others \"tsc -w\" \"nodemon --inspect dist/index.js --delay 500ms --watch dist/index.js\""
   },
   "author": "",
   "license": "ISC",
