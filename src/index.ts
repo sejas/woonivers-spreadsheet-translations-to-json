@@ -7,10 +7,10 @@ const SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
-const TOKEN_PATH = "../token.json"
-
+const TOKEN_PATH = "token.json"
+const spreadsheetId = "SOME-SPREADSHEET-ID"
 // Load client secrets from a local file.
-fs.readFile("../credentials.json", (err, content) => {
+fs.readFile("credentials.json", (err, content) => {
   if (err) return console.log("Error loading client secret file:", err)
   // Authorize a client with credentials, then call the Google Sheets API.
   authorize(JSON.parse(content), listMajors)
@@ -79,21 +79,85 @@ function listMajors(auth) {
   const sheets = google.sheets({ version: "v4", auth })
   sheets.spreadsheets.values.get(
     {
-      spreadsheetId: "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
-      range: "Class Data!A2:E"
+      spreadsheetId,
+      range: "transtlations"
     },
     (err, res) => {
       if (err) return console.log("The API returned an error: " + err)
       const rows = res.data.values
-      if (rows.length) {
-        console.log("Name, Major:")
-        // Print columns A and E, which correspond to indices 0 and 4.
-        rows.map(row => {
-          console.log(`${row[0]}, ${row[4]}`)
-        })
+      if (rows.length > 1) {
+        const wooTranslation = new WooTranslate(rows.slice(1))
+        console.log(wooTranslation.toJSON())
       } else {
         console.log("No data found.")
       }
     }
   )
+}
+
+/**
+ * arrayTojson
+ */
+class WooLang {
+  langs = {}
+  constructor(langsArray?: string[]) {
+    for (const lang of langsArray) {
+      this.addLang(lang)
+    }
+  }
+  get langKeys() {
+    return Object.keys(this.langs)
+  }
+  addLang(lang) {
+    this.langs[lang] = {}
+  }
+  addSection(section: string) {
+    for (const lang of this.langKeys) {
+      this.langs[lang][section] = {}
+    }
+  }
+  addTrasnlationToSection(section: string, [key, ...row]: string[]) {
+    for (const [index, lang] of this.langKeys) {
+      this.langs[lang][section][key] = row[index]
+    }
+  }
+}
+class WooTranslate {
+  rows = []
+  // The lang keys should be alphebatized
+  wooLangs = new WooLang(["en", "es"])
+  constructor(rows: string[]) {
+    this.rows = rows
+  }
+  toJSON() {
+    let currentSection = null
+    const langsLength = Object.keys(this.wooLangs).length
+    for (const [index, row] of this.rows) {
+      const key = row[0]
+      switch (row.length) {
+        case 0:
+          // We've finished
+          return this.wooLangs.langs
+        case 1:
+          // create a new section
+          currentSection = key
+          this.wooLangs.addSection(key)
+          break
+        default:
+          if (row.length < langsLength) {
+            console.warn(`MISSING TRANSLATION at line ${index + 1}`, { row })
+          }
+          if (currentSection) {
+            this.wooLangs.addTrasnlationToSection(currentSection, row)
+          } else {
+            throw new Error(
+              `Translations without section at line: ${index + 1}`
+            )
+          }
+          break
+      }
+    }
+    // This neve sholud be executed
+    throw new Error("Please add a blank line to se the end of the spreadsheet")
+  }
 }
