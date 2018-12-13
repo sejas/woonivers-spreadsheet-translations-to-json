@@ -13,7 +13,7 @@ const spreadsheetId = "SOME-SPREADSHEET-ID"
 fs.readFile("credentials.json", (err, content) => {
   if (err) return console.log("Error loading client secret file:", err)
   // Authorize a client with credentials, then call the Google Sheets API.
-  authorize(JSON.parse(content), listMajors)
+  authorize(JSON.parse(content), readSpreadSheeetToTranslate)
 })
 
 /**
@@ -75,7 +75,7 @@ function getNewToken(oAuth2Client, callback) {
  * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
-function listMajors(auth) {
+function readSpreadSheeetToTranslate(auth) {
   const sheets = google.sheets({ version: "v4", auth })
   sheets.spreadsheets.values.get(
     {
@@ -83,7 +83,7 @@ function listMajors(auth) {
       range: "transtlations"
     },
     (err, res) => {
-      if (err) return console.log("The API returned an error: " + err)
+      if (err) return console.log("--> The API returned an error: " + err)
       const rows = res.data.values
       if (rows.length > 1) {
         const wooTranslation = new WooTranslate(rows.slice(1))
