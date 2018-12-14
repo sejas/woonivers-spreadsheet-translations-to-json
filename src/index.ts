@@ -1,21 +1,27 @@
+//tslint:disable
 import fs = require("fs")
-import readline = require("readline")
+import path = require("path")
 import { google } from "googleapis"
+import readline = require("readline")
 
 import { writeToFile } from "./services"
+
+const PROJECT_PATH = `${__dirname}/..`
+const TOKEN_PATH = `${PROJECT_PATH}/woo-token.json`
+const CREDENTIALS_PATH = `${PROJECT_PATH}/woo-credentials.json`
+const spreadsheetId = "SOME-SPREADSHEET-ID"
+const DESTINATION_PATH = `${PROJECT_PATH}/../../src/i18n`
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
-const TOKEN_PATH = "token.json"
-const spreadsheetId = "SOME-SPREADSHEET-ID"
 // Load client secrets from a local file.
-fs.readFile("credentials.json", (err, content) => {
+fs.readFile(CREDENTIALS_PATH, (err, content) => {
   if (err) return console.log("Error loading client secret file:", err)
   // Authorize a client with credentials, then call the Google Sheets API.
-  authorize(JSON.parse(content), readSpreadSheeetToTranslate)
+  authorize(JSON.parse(content.toString()), readSpreadSheeetToTranslate)
 })
 
 /**
@@ -35,7 +41,7 @@ function authorize(credentials, callback) {
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback)
-    oAuth2Client.setCredentials(JSON.parse(token))
+    oAuth2Client.setCredentials(JSON.parse(token.toString()))
     callback(oAuth2Client)
   })
 }
@@ -59,12 +65,13 @@ function getNewToken(oAuth2Client, callback) {
   rl.question("Enter the code from that page here: ", code => {
     rl.close()
     oAuth2Client.getToken(code, (err, token) => {
-      if (err)
-        return console.error("Error while trying to retrieve access token", err)
+      if (err) {
+        return console.log("Error while trying to retrieve access token", err)
+      }
       oAuth2Client.setCredentials(token)
       // Store the token to disk for later program executions
       fs.writeFile(TOKEN_PATH, JSON.stringify(token), err => {
-        if (err) console.error(err)
+        if (err) console.log(err)
         console.log("Token stored to", TOKEN_PATH)
       })
       callback(oAuth2Client)
@@ -104,7 +111,7 @@ function readSpreadSheeetToTranslate(auth) {
 }
 
 /**
- * arrayTojson
+ * WooLang: it manges the translations
  */
 class WooLang {
   langs = {}
@@ -140,12 +147,16 @@ class WooLang {
     }
   }
 }
+
+/**
+ * WooTranslate: it reads rows , and write the WooLang into the right files
+ */
 class WooTranslate {
   private langKeys = ["en", "es"]
   rows = []
   // The lang keys should be alphebatized
   wooLangs = new WooLang(this.langKeys)
-  pathToSave = "./data"
+  pathToSave = `${PROJECT_PATH}/data`
 
   constructor(rows: string[]) {
     this.rows = rows
@@ -197,7 +208,7 @@ class WooTranslate {
       console.log(`Saving ${fileName}`)
       await writeToFile(localFile, this.wooLangs.langs[lang])
       if (copyToProject) {
-        const destinationFile = `../WooniversApp/src/i18n/${fileName}`
+        const destinationFile = `${DESTINATION_PATH}/${fileName}`
         fs.copyFile(localFile, destinationFile, err => {
           if (err) throw err
           console.log(`- [x] Copied ${localFile} to ${destinationFile}.`)
