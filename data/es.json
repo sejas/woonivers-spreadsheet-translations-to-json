@@ -259,42 +259,40 @@
   },
   "invoices": {
     "header": "FACTURAS",
-    "finishTrip": "TERMINAR VIAJE",
-    "textNextAmount": "Reembolsables",
+    "finishTrip": "CERRAR VIAJE",
+    "textNextAmount": "Reembolsarse",
     "ACTION_REQUIRED": "Requieren tu atención",
     "IN_PROCESS": "Procesando",
-    "REFUNDED": "No aceptadas",
+    "REJECTED": "No aceptadas",
     "APPROVED": "Preaceptadas",
-    "scanned": "Escaneada el",
     "badImage": "La image no es legible",
     "badInvoice": "Problema con la factura",
     "badSerial": "Faltan números de serie",
-    "refund": "Reembolso",
-    "toThe": "a las"
+    "noInvoices": "Aún no has escaneado ninguna factura."
   },
   "invoiceDetail": {
     "remake": "REHACER",
-    "imageScannedRecomendation.title": "Por favor ten en cuenta estas recomendaciones",
+    "imageScannedRecomendation.title": "Por favor ten en cuenta estas recomendaciones:",
     "imageScannedRecomendation.1": "1. Estira bien la factura",
     "imageScannedRecomendation.2": "2. Colocala en una superficie plana",
-    "imageScannedRecomendation.3": "3. Asegurate de que este bien iluminado (siempre puedes usar el flash",
+    "imageScannedRecomendation.3": "3. Asegurate de que este bien iluminado (siempre puedes usar el flash)",
     "imageScannedRecomendation.4": "4. Coloca la camara paralela a la factura",
     "IN_PROCESS": "Procesando",
     "ACTION_REQUIRED_NON_READABLE": "La imagen no es legible",
     "APPROVED": "Factura correcta",
-    "ACTION_REQUIRED_SERIAL_NUMBER": "Introduce el N de serie para validar tu reembolso",
-    "REFUNDED": "Factura rechada",
+    "ACTION_REQUIRED_SERIAL_NUMBER": "Introduce el Nº de serie para validar tu reembolso",
+    "REJECTED": "Factura rechada",
     "serialNumber": "Nº de serie",
     "invoice": "Factura",
     "save": "GUARDAR",
-    "itsArequirement": "Es un requerimiento importante de la Agencia Tributaria para tramitar el reembolso",
-    "isCorrect": "Asegurate de que es correcto",
+    "itsArequirement": "Es un requerimiento importante de la Agencia Tributaria para tramitar el reembolso.",
+    "isCorrect": "Asegurate de que es correcto.",
     "amountRefund": "Cantidad reembolsable",
     "productsRefund": "Articulos reembolsables",
     "productsNoRefund": "Articulos no reembolsables",
     "yourInvoice": "Tu factura",
     "rememberSaveOriginalInvoice": "Recuerda conservar la factura original, puedes necesitarla mas adelante",
-    "rejectedInvoice": "Factura rechazada por el sistema DIVA a causa de un problema relacionado con el número de factura que proporcionó el retailer"
+    "rejectedInvoice": "Factura rechazada por el sistema DIVA a causa de un problema relacionado con el número de factura que proporcionó el retailer."
   },
   "billingInfo": {
     "header": "INFO DE FACTURACIÓN",
@@ -330,5 +328,13 @@
   "modalNoToken": {
     "title": "Tu sesión ha caducado",
     "paragraph": "Por tu seguridad, la sesión actual ha cadudado. Vuelve a iniciar sesión."
+  },
+  "invoicesList": {
+    "ACTION_REQUIRED_NON_READABLE": "La imagen no es legible",
+    "ACTION_REQUIRED_SERIAL_NUMBER": "Faltan números de serie",
+    "REJECTED": "Problema con la factura",
+    "scanned": "Escaneada el",
+    "toThe": "a las",
+    "refund": "Reembolso"
   }
 }
