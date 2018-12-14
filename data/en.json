@@ -26,7 +26,7 @@
     "rrssLabel": "Or sign in with your social networks",
     "labelButtonLogin": "You already have an account",
     "buttonLogin": "LOG IN",
-    "buttonContinue": "Continue"
+    "buttonContinue": "CONTINUE"
   },
   "login": {
     "title": "What´s your email?",
@@ -34,14 +34,14 @@
     "emailPlaceholder": "Enter your email",
     "emailFormatError": "Enter a valid email address",
     "emailAccountError": "We couldn´t find this email address",
-    "buttonLogin": "Continue"
+    "buttonLogin": "CONTINUE"
   },
   "loginPassword": {
     "title": "Enter your password",
     "passwordPlaceholder": "Your password",
     "passwordError": "Incorrect password",
     "buttonForgotPassword": "Forgot your password?",
-    "buttonLogin": "Continue",
+    "buttonLogin": "CONTINUE",
     "auth/account-exists-with-different-credential": "This email address is already in use.",
     "auth/email-already-in-use": "This email address is already in use.",
     "auth/invalid-email": "The email address is not valid.",
@@ -59,7 +59,7 @@
     "paragraph": "We need it to send you information related to your refund.",
     "passwordPlaceholder": "Your password",
     "passwordError": "Minimum 6 characters",
-    "buttonLogin": "Contrinue",
+    "buttonLogin": "CONTINUE",
     "checkboxText1": "I accept the",
     "checkboxLinkText1": "Terms & conditions",
     "checkboxText2": "and",
@@ -81,14 +81,14 @@
     "paragraph": "Please follow the instructions we have sent to you",
     "textQuestion": "Didn't receive an email?",
     "buttonSendAgain": "Send again",
-    "buttonNext": "Continue",
+    "buttonNext": "CONTINUE",
     "textSendAgain": "Didn't receive an email?"
   },
   "scanPassportPermission": {
     "title": "Scan your passport",
     "paragraph": "In order to refund your taxes we require your passport. Please capture the image of the page with your photograph.",
-    "buttonOk": "Continue",
-    "buttonCancel": "Not now"
+    "buttonOk": "CONTINUE",
+    "buttonCancel": "NOT NOW"
   },
   "scanPassport": {
     "title": "Looking good?",
@@ -97,8 +97,8 @@
     "errorSavingText": "An error occured whilst saving your passport, please try again later."
   },
   "sharedScanConfirmationImage": {
-    "buttonOk": "Continue",
-    "buttonRetake": "Retake"
+    "buttonOk": "CONTINUE",
+    "buttonRetake": "RETAKE"
   },
   "selfiePermission": {
     "title": "Take a selfie",
@@ -117,7 +117,7 @@
     "city": "City",
     "region": "County",
     "country": "Country",
-    "buttonOk": "Save",
+    "buttonOk": "SAVE",
     "errorSavingTitle": "An error occured whilst saving your address",
     "errorSavingText": "Sorry, an error occured whilst saving your address, please try again later."
   },
@@ -128,7 +128,7 @@
   },
   "startTrip": {
     "title": "We require information relating to your trip",
-    "getStarted": "Start",
+    "getStarted": "START",
     "dateEnd": "When did you leave Spain",
     "departureType": {
       "title": "How are you travelling?",
@@ -142,10 +142,10 @@
     }
   },
   "home": {
-    "title": "My trip to Spain",
+    "title": "MY TRIP TO SPAIN",
     "textNextAmount": "Reimbursables",
-    "finishTrip": "End trip",
-    "titleInvoices": "Scanned invoices",
+    "finishTrip": "END TRIP",
+    "titleInvoices": "SCANNED INVOICES",
     "titleIsSchengen": "Non-Schengen countries coming soon. We will notify you know as soon as we launch in more countries"
   },
   "homeAlerts": {
@@ -159,7 +159,7 @@
   "tabs": {
     "home": "HOME",
     "invoices": "INVOICES",
-    "invoiceScan": " ",
+    "invoiceScan": ".",
     "alerts": "ALERTS",
     "savings": "SAVINGS"
   },
@@ -188,17 +188,17 @@
   "notificationPermission": {
     "title": "Turn notifications on",
     "paragraph": "So you can keep track of any important events on your trip.",
-    "cancel": "Cancel",
+    "cancel": "CANCEL",
     "ok": "OK"
   },
   "locationPermission": {
     "title": "Share your location",
     "paragraph": "So we can share local information with you",
-    "cancel": "Cancel",
+    "cancel": "CANCEL",
     "ok": "OK"
   },
   "alertsTab": {
-    "title": "Notifications",
+    "title": "NOTIFICATIONS",
     "newOnes": "New",
     "previous": "Existing",
     "noNewAlert": "No new notifications",
@@ -206,7 +206,7 @@
     "noAlert": "Únete al wooniverso, nosotros de guiaremos."
   },
   "closeTrip": {
-    "header": "Close trip",
+    "header": "CLOSE TRIP",
     "alert": {
       "title": "You are about to close your trip",
       "text": "If you have finished making purcahses in Spain, we will guide you through the process of reimbursing your taxes."
@@ -221,12 +221,12 @@
       "label": "Customs",
       "title": "Go to customs",
       "text": "Prepare to display the codes from the invoices to the DIVA machine in the invoice stamping area.",
+      "where": "Where can I find it?",
       "machine": "What does the machine look like?",
       "machineModal": "The DIVA validation machine looks like this",
       "code": "How do I display the codes?",
       "codeModal": "Put the codes in front of the sensor at waist height."
     },
-    "where": "Where can I find it?",
     "step3": {
       "label": "Scan",
       "title": "Scan the codes"
@@ -239,30 +239,28 @@
     "waitingRefund": "Awaiting confirmation of your refund"
   },
   "boardingScanPermission": {
-    "boardingScanPermission": {
-      "title": "Boarding pass",
-      "paragraph": "We require a photo of your boarding pass before we can reimburse your taxes. We cannot process your refund until we have verified this document.",
-      "gallery": "Gallery",
-      "takePhoto": "Take a photo"
-    },
-    "boardingScan": {
-      "title": "Looking good?",
-      "paragraph": "Please ensure that the two pages are visible, and that the text is legible."
-    }
+    "title": "Boarding pass",
+    "paragraph": "We require a photo of your boarding pass before we can reimburse your taxes. We cannot process your refund until we have verified this document.",
+    "gallery": "GALLERY",
+    "takePhoto": "TAKE A PHOTO"
+  },
+  "boardingScan": {
+    "title": "Looking good?",
+    "paragraph": "Please ensure that the two pages are visible, and that the text is legible."
   },
   "noSchengen": {
     "noSchengen": {
       "paragraph": "You are not leaving the Schengen area yet, so you should follow the steps below.",
-      "titleStep1": "Print invoices",
+      "titleStep1": "PRINT INVOICES",
       "paragraphStep1": "Print the email that we have sent which contains the details of your refund, and the instructions once you have arrived to your next destination",
-      "titleStep2": "Validate documents",
+      "titleStep2": "VALIDATE DOCUMENTS",
       "paragraphStep2": "When you arrive to the airport to leave the Schengen zone, go to customs and ask to have the documents stamped to validate them.",
-      "titleStep3": "Send documents",
+      "titleStep3": "SEND DOCUMENTS",
       "paragraphStep3": "Send proof of the validation which they provided in customs"
     }
   },
   "profile": {
-    "header": "Profile and settings",
+    "header": "PROFILE AND SETTINGS",
     "logout": "Close session",
     "residenceCountry": "Country of residence",
     "telephone": "Telephone number",
@@ -275,7 +273,7 @@
     "privacyPolicy": "Privacy policy",
     "termsConditions": "Terms and conditions",
     "updateTelephone": "Update telephone number",
-    "saveUpdate": "Save"
+    "saveUpdate": "SAVE"
   },
   "invoices": {
     "header": "INVOICES",
@@ -317,7 +315,7 @@
     "rejectedInvoice": "Invoice rejected by the DIVA system due to a problem related to the invoice number provided by the retailer."
   },
   "billingInfo": {
-    "header": "Billing information",
+    "header": "BILLING INFORMATION",
     "title": "We require an invoice containing the following information",
     "name": "First name",
     "surname": "Surname",
@@ -336,7 +334,7 @@
     "postSend": "We have sent you an email to reset your password. Please check your inbox.",
     "notReceived": "Haven´t received an email?",
     "sendAgain": "Resend",
-    "login": "Login"
+    "login": "LOGIN"
   },
   "savings": {
     "available": "Available",
@@ -355,7 +353,7 @@
     "ACTION_REQUIRED_NON_READABLE": "The image is not readable",
     "ACTION_REQUIRED_SERIAL_NUMBER": "Missing serial numbers",
     "REJECTED": "Problem with the bill",
-    "scanned": "Scanned The",
+    "scanned": "Scanned the",
     "toThe": "at",
     "refund": "Refund"
   }

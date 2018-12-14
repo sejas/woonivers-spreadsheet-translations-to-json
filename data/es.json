@@ -159,7 +159,7 @@
   "tabs": {
     "home": "INICIO",
     "invoices": "FACTURAS",
-    "invoiceScan": " ",
+    "invoiceScan": ".",
     "alerts": "ALERTAS",
     "savings": "CARTERA"
   },
@@ -221,12 +221,12 @@
       "label": "Aduana",
       "title": "Dirígete a aduanas",
       "text": "Prepárate para exhibir los códigos de facturas en la máquina DIVA en la zona de sellado de facturas.",
+      "where": "¿Dónde es?",
       "machine": "¿Cómo es la máquina?",
       "machineModal": "La máquina de validación DIVA tiene este aspecto.",
       "code": "¿Cómo mostrar los códigos?",
       "codeModal": "Pon los códigos delante del sensor que está a la altura de tu cintura."
     },
-    "where": "¿Dónde es?",
     "step3": {
       "label": "Escanea",
       "title": "Escanea los códigos"
@@ -239,16 +239,14 @@
     "waitingRefund": "Esperando confirmación de tu reembolso"
   },
   "boardingScanPermission": {
-    "boardingScanPermission": {
-      "title": "Tarjeta de embarque",
-      "paragraph": "Necesitamos una foto de tu tarjeta de embarque para proceder al reembolso de tus impuestos. No podremos realizar el reembolso hasta que verifiquemos el documento.",
-      "gallery": "GALERÍA",
-      "takePhoto": "TOMAR FOTO"
-    },
-    "boardingScan": {
-      "title": "¿Se ve bien?",
-      "paragraph": "Comprueba que aparecen las dos páginas completas y se distingue el texto."
-    }
+    "title": "Tarjeta de embarque",
+    "paragraph": "Necesitamos una foto de tu tarjeta de embarque para proceder al reembolso de tus impuestos. No podremos realizar el reembolso hasta que verifiquemos el documento.",
+    "gallery": "GALERÍA",
+    "takePhoto": "TOMAR FOTO"
+  },
+  "boardingScan": {
+    "title": "¿Se ve bien?",
+    "paragraph": "Comprueba que aparecen las dos páginas completas y se distingue el texto."
   },
   "noSchengen": {
     "noSchengen": {
