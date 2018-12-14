@@ -130,12 +130,16 @@
     "title": "Necesitamos información sobre tu viaje",
     "getStarted": "COMENZAR",
     "dateEnd": "¿Cuándo sales de España?",
-    "departureType.title": "¿Cómo te vas del país?",
-    "departureType.plane": "Avión",
-    "departureType.boat": "Barco",
+    "departureType": {
+      "title": "¿Cómo te vas del país?",
+      "plane": "Avión",
+      "boat": "Barco"
+    },
     "destination": "País de destino",
-    "transportNumber.F": "Número de vuelo",
-    "transportNumber.B": "Número de trayecto"
+    "transportNumber": {
+      "F": "Número de vuelo",
+      "B": "Número de trayecto"
+    }
   },
   "home": {
     "title": "MI VIAJE A ESPAÑA",
@@ -203,43 +207,59 @@
   },
   "closeTrip": {
     "header": "CERRAR VIAJE",
-    "alert.title": "Estas a punto de cerrar tu viaje",
-    "alert.text": "Si has terminado tus compras en España, continua y te guiaremos a traves del proceso de reembolso de impuestos.",
-    "step1.label": "Resumen",
-    "step1.title": "Resumen de tu viaje",
-    "step1.refundable": "Reembolsables",
-    "step1.invoicesRefundables": "Facturas reembolsables",
-    "step2.label": "Aduana",
-    "step2.title": "Dirígete a aduanas",
-    "step2.text": "Prepárate para exhibir los códigos de facturas en la máquina DIVA en la zona de sellado de facturas.",
+    "alert": {
+      "title": "Estas a punto de cerrar tu viaje",
+      "text": "Si has terminado tus compras en España, continua y te guiaremos a traves del proceso de reembolso de impuestos."
+    },
+    "step1": {
+      "label": "Resumen",
+      "title": "Resumen de tu viaje",
+      "refundable": "Reembolsables",
+      "invoicesRefundables": "Facturas reembolsables"
+    },
+    "step2": {
+      "label": "Aduana",
+      "title": "Dirígete a aduanas",
+      "text": "Prepárate para exhibir los códigos de facturas en la máquina DIVA en la zona de sellado de facturas.",
+      "machine": "¿Cómo es la máquina?",
+      "machineModal": "La máquina de validación DIVA tiene este aspecto.",
+      "code": "¿Cómo mostrar los códigos?",
+      "codeModal": "Pon los códigos delante del sensor que está a la altura de tu cintura."
+    },
     "where": "¿Dónde es?",
-    "step2.machine": "¿Cómo es la máquina?",
-    "step2.machineModal": "La máquina de validación DIVA tiene este aspecto.",
-    "step2.code": "¿Cómo mostrar los códigos?",
-    "step2.codeModal": "Pon los códigos delante del sensor que está a la altura de tu cintura.",
-    "step3.label": "Escanea",
-    "step3.title": "Escanea los códigos",
-    "invoiceCode.titleH1": "Factura",
-    "invoiceCode.titleH2": "Cantidad reembolsable",
+    "step3": {
+      "label": "Escanea",
+      "title": "Escanea los códigos"
+    },
+    "invoiceCode": {
+      "titleH1": "Factura",
+      "titleH2": "Cantidad reembolsable"
+    },
     "success": "Gracias por utilizar woonivers. Estamos validando tu información con la agencia tributaria.",
     "waitingRefund": "Esperando confirmación de tu reembolso"
   },
   "boardingScanPermission": {
-    "boardingScanPermission.title": "Tarjeta de embarque",
-    "boardingScanPermission.paragraph": "Necesitamos una foto de tu tarjeta de embarque para proceder al reembolso de tus impuestos. No podremos realizar el reembolso hasta que verifiquemos el documento.",
-    "boardingScanPermission.gallery": "GALERÍA",
-    "boardingScanPermission.takePhoto": "TOMAR FOTO",
-    "boardingScan.title": "¿Se ve bien?",
-    "boardingScan.paragraph": "Comprueba que aparecen las dos páginas completas y se distingue el texto."
+    "boardingScanPermission": {
+      "title": "Tarjeta de embarque",
+      "paragraph": "Necesitamos una foto de tu tarjeta de embarque para proceder al reembolso de tus impuestos. No podremos realizar el reembolso hasta que verifiquemos el documento.",
+      "gallery": "GALERÍA",
+      "takePhoto": "TOMAR FOTO"
+    },
+    "boardingScan": {
+      "title": "¿Se ve bien?",
+      "paragraph": "Comprueba que aparecen las dos páginas completas y se distingue el texto."
+    }
   },
   "noSchengen": {
-    "noSchengen.paragraph": "No estás saliendo de la zona Schengen aún, por lo que debes seguir los siguientes pasos.",
-    "noSchengen.titleStep1": "IMPRIME LAS FACTURAS",
-    "noSchengen.paragraphStep1": "Imprime el email que te hemos enviado con los detalles de tu reembolso y las instrucciones una vez estes en tu siguiente destino.",
-    "noSchengen.titleStep2": "VALIDA LOS DOCUMENTOS",
-    "noSchengen.paragraphStep2": "Cuando estes en el aeropuerto para dejar la zona Schengen, ve a aduanas y pide que te sellen los documentos para validarlos.",
-    "noSchengen.titleStep3": "ENVIANOS LOS DOCUMENTOS",
-    "noSchengen.paragraphStep3": "Mándanos la prueba de la validación que te dieron en la aduana."
+    "noSchengen": {
+      "paragraph": "No estás saliendo de la zona Schengen aún, por lo que debes seguir los siguientes pasos.",
+      "titleStep1": "IMPRIME LAS FACTURAS",
+      "paragraphStep1": "Imprime el email que te hemos enviado con los detalles de tu reembolso y las instrucciones una vez estes en tu siguiente destino.",
+      "titleStep2": "VALIDA LOS DOCUMENTOS",
+      "paragraphStep2": "Cuando estes en el aeropuerto para dejar la zona Schengen, ve a aduanas y pide que te sellen los documentos para validarlos.",
+      "titleStep3": "ENVIANOS LOS DOCUMENTOS",
+      "paragraphStep3": "Mándanos la prueba de la validación que te dieron en la aduana."
+    }
   },
   "profile": {
     "header": "PERFIL Y AJUSTES",
@@ -272,11 +292,13 @@
   },
   "invoiceDetail": {
     "remake": "REHACER",
-    "imageScannedRecomendation.title": "Por favor ten en cuenta estas recomendaciones:",
-    "imageScannedRecomendation.1": "1. Estira bien la factura",
-    "imageScannedRecomendation.2": "2. Colocala en una superficie plana",
-    "imageScannedRecomendation.3": "3. Asegurate de que este bien iluminado (siempre puedes usar el flash)",
-    "imageScannedRecomendation.4": "4. Coloca la camara paralela a la factura",
+    "imageScannedRecomendation": {
+      "1": "1. Estira bien la factura",
+      "2": "2. Colocala en una superficie plana",
+      "3": "3. Asegurate de que este bien iluminado (siempre puedes usar el flash)",
+      "4": "4. Coloca la camara paralela a la factura",
+      "title": "Por favor ten en cuenta estas recomendaciones:"
+    },
     "IN_PROCESS": "Procesando",
     "ACTION_REQUIRED_NON_READABLE": "La imagen no es legible",
     "APPROVED": "Factura correcta",
