@@ -130,7 +130,13 @@ class WooLang {
         debugger;
         let index = 0;
         for (const lang of this.langKeys) {
-            this.langs[lang][section][key] = row[index++];
+            const [firstKey, secondKey] = key.split(".");
+            if (secondKey) {
+                this.langs[lang][section][firstKey] = Object.assign({}, this.langs[lang][section][firstKey], { [secondKey]: row[index++] });
+            }
+            else {
+                this.langs[lang][section][firstKey] = row[index++];
+            }
         }
     }
 }

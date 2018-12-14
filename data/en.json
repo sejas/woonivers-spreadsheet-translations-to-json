@@ -130,12 +130,16 @@
     "title": "We require information relating to your trip",
     "getStarted": "Start",
     "dateEnd": "When did you leave Spain",
-    "departureType.title": "How are you travelling?",
-    "departureType.plane": "Aeroplane",
-    "departureType.boat": "Boat",
+    "departureType": {
+      "title": "How are you travelling?",
+      "plane": "Aeroplane",
+      "boat": "Boat"
+    },
     "destination": "Country of destination",
-    "transportNumber.F": "Flight number",
-    "transportNumber.B": "Journey number"
+    "transportNumber": {
+      "F": "Flight number",
+      "B": "Journey number"
+    }
   },
   "home": {
     "title": "My trip to Spain",
@@ -203,43 +207,59 @@
   },
   "closeTrip": {
     "header": "Close trip",
-    "alert.title": "You are about to close your trip",
-    "alert.text": "If you have finished making purcahses in Spain, we will guide you through the process of reimbursing your taxes.",
-    "step1.label": "Summary",
-    "step1.title": "Summary of your trip",
-    "step1.refundable": "Refundable",
-    "step1.invoicesRefundables": "Refundable invoices",
-    "step2.label": "Customs",
-    "step2.title": "Go to customs",
-    "step2.text": "Prepare to display the codes from the invoices to the DIVA machine in the invoice stamping area.",
+    "alert": {
+      "title": "You are about to close your trip",
+      "text": "If you have finished making purcahses in Spain, we will guide you through the process of reimbursing your taxes."
+    },
+    "step1": {
+      "label": "Summary",
+      "title": "Summary of your trip",
+      "refundable": "Refundable",
+      "invoicesRefundables": "Refundable invoices"
+    },
+    "step2": {
+      "label": "Customs",
+      "title": "Go to customs",
+      "text": "Prepare to display the codes from the invoices to the DIVA machine in the invoice stamping area.",
+      "machine": "What does the machine look like?",
+      "machineModal": "The DIVA validation machine looks like this",
+      "code": "How do I display the codes?",
+      "codeModal": "Put the codes in front of the sensor at waist height."
+    },
     "where": "Where can I find it?",
-    "step2.machine": "What does the machine look like?",
-    "step2.machineModal": "The DIVA validation machine looks like this",
-    "step2.code": "How do I display the codes?",
-    "step2.codeModal": "Put the codes in front of the sensor at waist height.",
-    "step3.label": "Scan",
-    "step3.title": "Scan the codes",
-    "invoiceCode.titleH1": "Invoice",
-    "invoiceCode.titleH2": "Reimbursable amount ",
+    "step3": {
+      "label": "Scan",
+      "title": "Scan the codes"
+    },
+    "invoiceCode": {
+      "titleH1": "Invoice",
+      "titleH2": "Reimbursable amount "
+    },
     "success": "Thank you for using Woonivers. We are validating your information with the tax agency",
     "waitingRefund": "Awaiting confirmation of your refund"
   },
   "boardingScanPermission": {
-    "boardingScanPermission.title": "Boarding pass",
-    "boardingScanPermission.paragraph": "We require a photo of your boarding pass before we can reimburse your taxes. We cannot process your refund until we have verified this document.",
-    "boardingScanPermission.gallery": "Gallery",
-    "boardingScanPermission.takePhoto": "Take a photo",
-    "boardingScan.title": "Looking good?",
-    "boardingScan.paragraph": "Please ensure that the two pages are visible, and that the text is legible."
+    "boardingScanPermission": {
+      "title": "Boarding pass",
+      "paragraph": "We require a photo of your boarding pass before we can reimburse your taxes. We cannot process your refund until we have verified this document.",
+      "gallery": "Gallery",
+      "takePhoto": "Take a photo"
+    },
+    "boardingScan": {
+      "title": "Looking good?",
+      "paragraph": "Please ensure that the two pages are visible, and that the text is legible."
+    }
   },
   "noSchengen": {
-    "noSchengen.paragraph": "You are not leaving the Schengen area yet, so you should follow the steps below.",
-    "noSchengen.titleStep1": "Print invoices",
-    "noSchengen.paragraphStep1": "Print the email that we have sent which contains the details of your refund, and the instructions once you have arrived to your next destination",
-    "noSchengen.titleStep2": "Validate documents",
-    "noSchengen.paragraphStep2": "When you arrive to the airport to leave the Schengen zone, go to customs and ask to have the documents stamped to validate them.",
-    "noSchengen.titleStep3": "Send documents",
-    "noSchengen.paragraphStep3": "Send proof of the validation which they provided in customs"
+    "noSchengen": {
+      "paragraph": "You are not leaving the Schengen area yet, so you should follow the steps below.",
+      "titleStep1": "Print invoices",
+      "paragraphStep1": "Print the email that we have sent which contains the details of your refund, and the instructions once you have arrived to your next destination",
+      "titleStep2": "Validate documents",
+      "paragraphStep2": "When you arrive to the airport to leave the Schengen zone, go to customs and ask to have the documents stamped to validate them.",
+      "titleStep3": "Send documents",
+      "paragraphStep3": "Send proof of the validation which they provided in customs"
+    }
   },
   "profile": {
     "header": "Profile and settings",
@@ -272,11 +292,13 @@
   },
   "invoiceDetail": {
     "remake": "RETAKE",
-    "imageScannedRecomendation.title": "Please keep in mind these recommendations:",
-    "imageScannedRecomendation.1": "1. It will stretch the invoice",
-    "imageScannedRecomendation.2": "2. Place it on a flat surface",
-    "imageScannedRecomendation.3": "3. Make sure it is well lit (you can always use the flash)",
-    "imageScannedRecomendation.4": "4. Place the camera parallel to the invoice",
+    "imageScannedRecomendation": {
+      "1": "1. It will stretch the invoice",
+      "2": "2. Place it on a flat surface",
+      "3": "3. Make sure it is well lit (you can always use the flash)",
+      "4": "4. Place the camera parallel to the invoice",
+      "title": "Please keep in mind these recommendations:"
+    },
     "IN_PROCESS": "Processing",
     "ACTION_REQUIRED_NON_READABLE": "The image is not readable",
     "APPROVED": "Approved",
