@@ -1,6 +1,8 @@
-const fs = require("fs")
-const readline = require("readline")
-const { google } = require("googleapis")
+import fs = require("fs")
+import readline = require("readline")
+import { google } from "googleapis"
+
+import { writeToFile } from "./services"
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
@@ -88,7 +90,9 @@ function readSpreadSheeetToTranslate(auth) {
       if (rows.length > 1) {
         try {
           const wooTranslation = new WooTranslate(rows.slice(1))
-          console.log(wooTranslation.toJSON())
+          // console.log(wooTranslation.toJSON())
+          console.log("saving to files")
+          wooTranslation.saveToFiles()
         } catch (error) {
           console.log("--> Error catched: ", { error })
         }
@@ -129,15 +133,18 @@ class WooLang {
   }
 }
 class WooTranslate {
+  private langKeys = ["en", "es"]
   rows = []
   // The lang keys should be alphebatized
-  wooLangs = new WooLang(["en", "es"])
+  wooLangs = new WooLang(this.langKeys)
+  pathToSave = "./data"
+
   constructor(rows: string[]) {
     this.rows = rows
+    this.read()
   }
-  toJSON() {
+  private read() {
     let currentSection = null
-    const langsLength = Object.keys(this.wooLangs).length
     let index = 1
     for (const row of this.rows) {
       console.log(`Reading ${index} --- ${row}`)
@@ -145,15 +152,17 @@ class WooTranslate {
       switch (row.length) {
         case 0:
           // We've finished
-          console.log("finished ! at ")
-          return this.wooLangs.langs
+          console.log(
+            `=========================\n-------------------> finished ! at line ${index} =========================\n`
+          )
+          return
         case 1:
           // create a new section
           currentSection = key
           this.wooLangs.addSection(key)
           break
         default:
-          if (row.length < langsLength) {
+          if (row.length < this.langKeys.length) {
             console.warn(`MISSING TRANSLATION at line ${index}`, { row })
           }
           if (currentSection) {
@@ -167,5 +176,17 @@ class WooTranslate {
     }
     // This neve sholud be executed
     throw new Error("Please add a blank line to se the end of the spreadsheet")
+  }
+
+  toJSON() {
+    return this.wooLangs.langs
+  }
+
+  saveToFiles() {
+    for (const lang of this.langKeys) {
+      const fileName = `${lang}.json`
+      console.log(`Saving ${fileName}`)
+      writeToFile(`${this.pathToSave}/${fileName}`, this.wooLangs.langs[lang])
+    }
   }
 }

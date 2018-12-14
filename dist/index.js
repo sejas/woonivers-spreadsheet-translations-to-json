@@ -1,6 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 const readline = require("readline");
-const { google } = require("googleapis");
+const googleapis_1 = require("googleapis");
+const services_1 = require("./services");
 // If modifying these scopes, delete token.json.
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
 // The file token.json stores the user's access and refresh tokens, and is
@@ -23,7 +26,7 @@ fs.readFile("credentials.json", (err, content) => {
  */
 function authorize(credentials, callback) {
     const { client_secret, client_id, redirect_uris } = credentials.installed;
-    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
+    const oAuth2Client = new googleapis_1.google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
     // Check if we have previously stored a token.
     fs.readFile(TOKEN_PATH, (err, token) => {
         if (err)
@@ -70,7 +73,7 @@ function getNewToken(oAuth2Client, callback) {
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 function readSpreadSheeetToTranslate(auth) {
-    const sheets = google.sheets({ version: "v4", auth });
+    const sheets = googleapis_1.google.sheets({ version: "v4", auth });
     sheets.spreadsheets.values.get({
         spreadsheetId,
         range: "translations"
@@ -81,7 +84,9 @@ function readSpreadSheeetToTranslate(auth) {
         if (rows.length > 1) {
             try {
                 const wooTranslation = new WooTranslate(rows.slice(1));
-                console.log(wooTranslation.toJSON());
+                // console.log(wooTranslation.toJSON())
+                console.log("saving to files");
+                wooTranslation.saveToFiles();
             }
             catch (error) {
                 console.log("--> Error catched: ", { error });
@@ -123,14 +128,16 @@ class WooLang {
 }
 class WooTranslate {
     constructor(rows) {
+        this.langKeys = ["en", "es"];
         this.rows = [];
         // The lang keys should be alphebatized
-        this.wooLangs = new WooLang(["en", "es"]);
+        this.wooLangs = new WooLang(this.langKeys);
+        this.pathToSave = "./data";
         this.rows = rows;
+        this.read();
     }
-    toJSON() {
+    read() {
         let currentSection = null;
-        const langsLength = Object.keys(this.wooLangs).length;
         let index = 1;
         for (const row of this.rows) {
             console.log(`Reading ${index} --- ${row}`);
@@ -138,15 +145,15 @@ class WooTranslate {
             switch (row.length) {
                 case 0:
                     // We've finished
-                    console.log("finished ! at ");
-                    return this.wooLangs.langs;
+                    console.log(`=========================\n-------------------> finished ! at line ${index} =========================\n`);
+                    return;
                 case 1:
                     // create a new section
                     currentSection = key;
                     this.wooLangs.addSection(key);
                     break;
                 default:
-                    if (row.length < langsLength) {
+                    if (row.length < this.langKeys.length) {
                         console.warn(`MISSING TRANSLATION at line ${index}`, { row });
                     }
                     if (currentSection) {
@@ -161,6 +168,16 @@ class WooTranslate {
         }
         // This neve sholud be executed
         throw new Error("Please add a blank line to se the end of the spreadsheet");
+    }
+    toJSON() {
+        return this.wooLangs.langs;
+    }
+    saveToFiles() {
+        for (const lang of this.langKeys) {
+            const fileName = `${lang}.json`;
+            console.log(`Saving ${fileName}`);
+            services_1.writeToFile(`${this.pathToSave}/${fileName}`, this.wooLangs.langs[lang]);
+        }
     }
 }
 //# sourceMappingURL=index.js.map
