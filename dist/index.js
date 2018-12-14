@@ -1,4 +1,12 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 const readline = require("readline");
@@ -86,7 +94,7 @@ function readSpreadSheeetToTranslate(auth) {
                 const wooTranslation = new WooTranslate(rows.slice(1));
                 // console.log(wooTranslation.toJSON())
                 console.log("saving to files");
-                wooTranslation.saveToFiles();
+                wooTranslation.saveToFiles(true);
             }
             catch (error) {
                 console.log("--> Error catched: ", { error });
@@ -172,12 +180,23 @@ class WooTranslate {
     toJSON() {
         return this.wooLangs.langs;
     }
-    saveToFiles() {
-        for (const lang of this.langKeys) {
-            const fileName = `${lang}.json`;
-            console.log(`Saving ${fileName}`);
-            services_1.writeToFile(`${this.pathToSave}/${fileName}`, this.wooLangs.langs[lang]);
-        }
+    saveToFiles(copyToProject) {
+        return __awaiter(this, void 0, void 0, function* () {
+            for (const lang of this.langKeys) {
+                const fileName = `${lang}.json`;
+                const localFile = `${this.pathToSave}/${fileName}`;
+                console.log(`Saving ${fileName}`);
+                yield services_1.writeToFile(localFile, this.wooLangs.langs[lang]);
+                if (copyToProject) {
+                    const destinationFile = `../WooniversApp/src/i18n/${fileName}`;
+                    fs.copyFile(localFile, destinationFile, err => {
+                        if (err)
+                            throw err;
+                        console.log(`- [x] Copied ${localFile} to ${destinationFile}.`);
+                    });
+                }
+            }
+        });
     }
 }
 //# sourceMappingURL=index.js.map

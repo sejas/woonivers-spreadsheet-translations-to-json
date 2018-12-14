@@ -154,9 +154,8 @@
   },
   "tabs": {
     "home": "INICIO",
-    "invoices": "FACTURAS"
-  },
-  "invoiceScan": {
+    "invoices": "FACTURAS",
+    "invoiceScan": " ",
     "alerts": "ALERTAS",
     "savings": "CARTERA"
   },
@@ -321,6 +320,7 @@
   },
   "savings": {
     "available": "Disponible",
+    "manageFundsButton": "SACAR FONDOS",
     "emptyMovements": "Not tienes ningún movimiento todavía",
     "titleMovements": "Movimientos de la cartera",
     "movementWithCreditCard": "Retirada a tarjeta de crédito",
