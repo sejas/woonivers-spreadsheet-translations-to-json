@@ -92,7 +92,7 @@ function readSpreadSheeetToTranslate(auth) {
           const wooTranslation = new WooTranslate(rows.slice(1))
           // console.log(wooTranslation.toJSON())
           console.log("saving to files")
-          wooTranslation.saveToFiles()
+          wooTranslation.saveToFiles(true)
         } catch (error) {
           console.log("--> Error catched: ", { error })
         }
@@ -182,11 +182,19 @@ class WooTranslate {
     return this.wooLangs.langs
   }
 
-  saveToFiles() {
+  async saveToFiles(copyToProject?: boolean) {
     for (const lang of this.langKeys) {
       const fileName = `${lang}.json`
+      const localFile = `${this.pathToSave}/${fileName}`
       console.log(`Saving ${fileName}`)
-      writeToFile(`${this.pathToSave}/${fileName}`, this.wooLangs.langs[lang])
+      await writeToFile(localFile, this.wooLangs.langs[lang])
+      if (copyToProject) {
+        const destinationFile = `../WooniversApp/src/i18n/${fileName}`
+        fs.copyFile(localFile, destinationFile, err => {
+          if (err) throw err
+          console.log(`- [x] Copied ${localFile} to ${destinationFile}.`)
+        })
+      }
     }
   }
 }

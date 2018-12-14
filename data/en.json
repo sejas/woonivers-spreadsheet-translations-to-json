@@ -154,9 +154,8 @@
   },
   "tabs": {
     "home": "HOME",
-    "invoices": "INVOICES"
-  },
-  "invoiceScan": {
+    "invoices": "INVOICES",
+    "invoiceScan": " ",
     "alerts": "ALERTS",
     "savings": "SAVINGS"
   },
