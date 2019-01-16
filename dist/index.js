@@ -10,14 +10,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 //tslint:disable
 const fs = require("fs");
-const path = require("path");
 const googleapis_1 = require("googleapis");
 const readline = require("readline");
 const services_1 = require("./services");
-const PROJECT_PATH = path.dirname(`${__dirname}/..`);
-const TOKEN_PATH = `${PROJECT_PATH}/woo-token.json`;
-const CREDENTIALS_PATH = `${PROJECT_PATH}/woo-credentials.json`;
+const PROJECT_USER_PATH = `~/woo`;
+const TOKEN_PATH = `${PROJECT_USER_PATH}/woo-token.json`;
+const CREDENTIALS_PATH = `${PROJECT_USER_PATH}/woo-credentials.json`;
 const spreadsheetId = "SOME-SPREADSHEET-ID";
+const PROJECT_PATH = `${__dirname}/..`;
 const DESTINATION_PATH = `${PROJECT_PATH}/../../src/i18n`;
 // If modifying these scopes, delete token.json.
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
