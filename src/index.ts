@@ -157,7 +157,7 @@ class WooTranslate {
   rows = []
   // The lang keys should be alphebatized
   wooLangs = new WooLang(this.langKeys)
-  pathToSave = `${PROJECT_PATH}/data`
+  pathToSave = `${PROJECT_PATH}`
 
   constructor(rows: string[]) {
     this.rows = rows
@@ -213,6 +213,10 @@ class WooTranslate {
         fs.copyFile(localFile, destinationFile, err => {
           if (err) throw err
           console.log(`- [x] Copied ${localFile} to ${destinationFile}.`)
+          fs.unlink(localFile, err => {
+            if (err) throw err
+            console.log(`- [x] Deleted ${localFile}.`)
+          })
         })
       }
     }
