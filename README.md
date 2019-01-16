@@ -6,6 +6,8 @@ https://developers.google.com/sheets/api/quickstart/nodejs
 
 This folder should be in executed in the parent directory of WooniversApp.
 
+You must create manually a `~/.woo`.
+
 ## Build
 
 It compiles the src/\*.typescript files and copy the src and dist into WooniversApp/woo-scripts/translate
