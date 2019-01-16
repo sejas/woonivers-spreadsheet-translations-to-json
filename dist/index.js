@@ -155,7 +155,7 @@ class WooTranslate {
         this.rows = [];
         // The lang keys should be alphebatized
         this.wooLangs = new WooLang(this.langKeys);
-        this.pathToSave = `${PROJECT_PATH}/data`;
+        this.pathToSave = `${PROJECT_PATH}`;
         this.rows = rows;
         this.read();
     }
@@ -208,6 +208,11 @@ class WooTranslate {
                         if (err)
                             throw err;
                         console.log(`- [x] Copied ${localFile} to ${destinationFile}.`);
+                        fs.unlink(localFile, err => {
+                            if (err)
+                                throw err;
+                            console.log(`- [x] Deleted ${localFile}.`);
+                        });
                     });
                 }
             }

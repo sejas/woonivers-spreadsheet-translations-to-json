@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
-exports.writeToFileGeneric = (method, filename, data) => new Promise((resolve, reject) => {
+exports.writeToFileGeneric = (method, filename, data, flag = "w") => new Promise((resolve, reject) => {
     const dataToWrite = "string" !== typeof data ? JSON.stringify(data, null, 2) : data;
-    fs[method](filename, dataToWrite, function (err) {
+    fs[method](filename, dataToWrite, { flag }, err => {
         if (err) {
             reject();
-            return console.error(err);
+            throw err;
         }
         // console.log(`The file "${filename}" was saved!`)
         resolve();

@@ -1,13 +1,13 @@
 const fs = require("fs")
 
-export const writeToFileGeneric = (method, filename, data) =>
+export const writeToFileGeneric = (method, filename, data, flag = "w") =>
   new Promise((resolve, reject) => {
     const dataToWrite: string =
       "string" !== typeof data ? JSON.stringify(data, null, 2) : data
-    fs[method](filename, dataToWrite, function(err) {
+    fs[method](filename, dataToWrite, { flag }, err => {
       if (err) {
         reject()
-        return console.error(err)
+        throw err
       }
       // console.log(`The file "${filename}" was saved!`)
       resolve()
