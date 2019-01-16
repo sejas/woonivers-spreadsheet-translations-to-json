@@ -6,7 +6,7 @@ https://developers.google.com/sheets/api/quickstart/nodejs
 
 This folder should be in executed in the parent directory of WooniversApp.
 
-You must create manually a `~/.woo`.
+You must create manually the folder `~/.woo`, and add there the `woo-credentials.json`.
 
 ## Build
 

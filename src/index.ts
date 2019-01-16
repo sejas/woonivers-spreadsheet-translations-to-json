@@ -6,7 +6,7 @@ import readline = require("readline")
 
 import { writeToFile } from "./services"
 
-const PROJECT_USER_PATH = `~/.woo`
+const PROJECT_USER_PATH = `${require("os").homedir()}/.woo`
 const TOKEN_PATH = `${PROJECT_USER_PATH}/woo-token.json`
 const CREDENTIALS_PATH = `${PROJECT_USER_PATH}/woo-credentials.json`
 const spreadsheetId = "SOME-SPREADSHEET-ID"
