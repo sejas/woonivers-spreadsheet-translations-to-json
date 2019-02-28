@@ -1,0 +1,59 @@
+{
+  "test": {},
+  "common": {},
+  "errors": {},
+  "register": {},
+  "login": {},
+  "loginPassword": {},
+  "registerPassword": {},
+  "emailConfirmation": {},
+  "scanPassportPermission": {},
+  "scanPassport": {},
+  "sharedScanConfirmationImage": {},
+  "selfiePermission": {},
+  "selfie": {},
+  "invoiceAddress": {},
+  "finish": {},
+  "startTrip": {
+    "departureType": {},
+    "transportNumber": {}
+  },
+  "home": {},
+  "homeAlerts": {},
+  "HomeInvoiceResume": {},
+  "tabs": {},
+  "countryPicker": {},
+  "datePicker": {},
+  "preScanInvoice": {},
+  "scanInvoice": {},
+  "saveInvoice": {},
+  "walkThroughSwiper": {},
+  "notificationPermission": {},
+  "locationPermission": {},
+  "alertsTab": {},
+  "closeTrip": {
+    "alert": {},
+    "step1": {},
+    "step2": {},
+    "step3": {},
+    "invoiceCode": {}
+  },
+  "boardingScanPermission": {},
+  "boardingScan": {},
+  "noSchengen": {
+    "noSchengen": {}
+  },
+  "profile": {},
+  "billingInfo": {},
+  "changeRecoverPassword": {},
+  "savings": {},
+  "modalNoToken": {},
+  "invoices": {},
+  "invoicesList": {},
+  "invoiceDetail": {
+    "imageScannedRecomendation": {}
+  },
+  "rejectionCode": {},
+  "cameraPermission": {},
+  "bankMovementForm": {}
+}

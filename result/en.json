@@ -1,0 +1,383 @@
+{
+  "test": {
+    "howTo": "HOW TO",
+    "headerTextRgight": "Saltar"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "back": "Back",
+    "close": "CLOSE",
+    "dontShowAgain": "Do not show again",
+    "continue": "CONTINUE",
+    "next": "NEXT",
+    "start": "START",
+    "send": "SEND"
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "paragraph": "The operation could not be completed successfully. Try again.",
+    "invalidEmail": "Invalid email address"
+  },
+  "register": {
+    "title": "What's your email?",
+    "paragraph": "We need to send you information related to your refund.",
+    "emailPlaceholder": "Introduce your email",
+    "emailFormatError": "Introduce a valid email address",
+    "rrssLabel": "Or sign in with your social networks",
+    "labelButtonLogin": "You already have an account",
+    "buttonLogin": "LOG IN",
+    "buttonContinue": "CONTINUE"
+  },
+  "login": {
+    "title": "What´s your email?",
+    "paragraph": "Enter the email used to create your account",
+    "emailPlaceholder": "Enter your email",
+    "emailFormatError": "Enter a valid email address",
+    "emailAccountError": "We couldn´t find this email address",
+    "buttonLogin": "CONTINUE"
+  },
+  "loginPassword": {
+    "title": "Enter your password",
+    "passwordPlaceholder": "Your password",
+    "passwordError": "Incorrect password",
+    "shortPassword": "The password is too short",
+    "buttonForgotPassword": "Forgot your password?",
+    "buttonLogin": "CONTINUE",
+    "auth/account-exists-with-different-credential": "This email address is already in use.",
+    "auth/email-already-in-use": "This email address is already in use.",
+    "auth/invalid-email": "The email address is not valid.",
+    "auth/weak-password": "Weak password",
+    "auth/invalid-credential": "Email/password are incorrect or have expired.",
+    "auth/operation-not-allowed": "Operation not allowed",
+    "auth/user-disabled": "This account is disabled.",
+    "auth/user-not-found": "User not found",
+    "auth/wrong-password": "Wrong password",
+    "auth/invalid-verification-code": "Invalid verification code",
+    "auth/invalid-verification-id": "Invalid verification id"
+  },
+  "registerPassword": {
+    "title": "Choose a password.",
+    "paragraph": "We need it to send you information related to your refund.",
+    "passwordPlaceholder": "Your password",
+    "passwordError": "Minimum 6 characters",
+    "buttonLogin": "CONTINUE",
+    "checkboxText1": "I accept the",
+    "checkboxLinkText1": "terms & conditions",
+    "checkboxText2": "and",
+    "checkboxLinkText2": "privacy policy.",
+    "checkboxLink1": "https://woonivers.com/terms/",
+    "checkboxLink2": "https://woonivers.com/privacy"
+  },
+  "emailConfirmation": {
+    "title": "Verify your email",
+    "paragraph": "Please follow the instructions we have sent to you",
+    "textQuestion": "Didn't receive an email?",
+    "buttonSendAgain": "Send again",
+    "buttonNext": "CONTINUE",
+    "textSendAgain": "Didn't receive an email?"
+  },
+  "scanPassportPermission": {
+    "title": "Scan your passport",
+    "paragraph": "In order to refund your taxes we require your passport. Please capture the image of the page with your photograph.",
+    "buttonOk": "CONTINUE",
+    "buttonCancel": "NOT NOW"
+  },
+  "scanPassport": {
+    "title": "Looking good?",
+    "paragraph": "Please check both pages are complete and with legible information",
+    "errorSavingTitle": "Error uploading passport",
+    "errorSavingText": "An error occured whilst saving your passport, please try again later."
+  },
+  "sharedScanConfirmationImage": {
+    "buttonOk": "CONTINUE",
+    "buttonRetake": "RETAKE"
+  },
+  "selfiePermission": {
+    "title": "Take a selfie",
+    "paragraph": "We need a photo of your face to verify your identity",
+    "buttonOk": "OK"
+  },
+  "selfie": {
+    "title": "How do you look?",
+    "paragraph": "Make sure we can recognise you"
+  },
+  "invoiceAddress": {
+    "title": "Billing address",
+    "paragraph": "This information will help you when requesting a bill",
+    "address": "Address",
+    "postalCode": "Postcode",
+    "city": "City",
+    "region": "County",
+    "country": "Country",
+    "buttonOk": "SAVE",
+    "errorSavingTitle": "An error occured whilst saving your address",
+    "errorSavingText": "Sorry, an error occured whilst saving your address, please try again later."
+  },
+  "finish": {
+    "title": "Congratulations!",
+    "paragraph": "Start saving money with Woonivers",
+    "buttonBegin": "Start"
+  },
+  "startTrip": {
+    "title": "We require information relating to your trip",
+    "getStarted": "START",
+    "dateEnd": "When did you leave Spain",
+    "departureType": {
+      "title": "How are you travelling?",
+      "plane": "Aeroplane",
+      "boat": "Boat"
+    },
+    "destination": "Country of destination",
+    "transportNumber": {
+      "F": "Flight number",
+      "B": "Journey number"
+    }
+  },
+  "home": {
+    "title": "MY TRIP TO SPAIN",
+    "textNextAmount": "Refundable",
+    "titleIsSchengen": "\nOur service is not available for residents in countries of the European Union. We will notify you as soon as we launch in more countries",
+    "btnScanText1": "At the store",
+    "btnScanText2": "Scan your receipt",
+    "btnScanText": "SCAN",
+    "btnCloseText1": "On departure",
+    "btnCloseText2": "Pass refund control",
+    "btnCloseText": "GO"
+  },
+  "homeAlerts": {
+    "passport": "There are two receipts which require your attention"
+  },
+  "HomeInvoiceResume": {
+    "inProcess": "In process",
+    "actionRequired": "Action required",
+    "error": "Invalid",
+    "approved": "Approved"
+  },
+  "tabs": {
+    "home": "HOME",
+    "invoices": "MY BUYS",
+    "savings": "SAVINGS",
+    "alerts": "ALERTS",
+    "support": "SUPPORT"
+  },
+  "countryPicker": {
+    "filterPlaceholder": "Filter"
+  },
+  "datePicker": {
+    "titleIOS": "Choose a date",
+    "cancelTextIOS": "Cancel",
+    "confirmTextIOS": "Confirm"
+  },
+  "preScanInvoice": {
+    "title": "Ready to request tax free?",
+    "paragraph": "Please make sure the store supports Woonivers Tax Free and get the store receipt ready."
+  },
+  "scanInvoice": {
+    "title": "Looking good?",
+    "paragraph": "Please ensure that all information displayed on the receipt is legible"
+  },
+  "saveInvoice": {
+    "title": "Save your receipt",
+    "paragraph": "You may need it later"
+  },
+  "walkThroughSwiper": {
+    "title1": "Welcome to Scan & Go Tax Free!",
+    "paragraph1": "Resident outside the European Union? Travelling in Spain? With Woonivers you can complete your VAT refund in supported stores the easy way.",
+    "title2": "Scan, validate, and refund",
+    "paragraph2": "Get your refund in two simple steps: When shopping in supported stores, scan your receipt with this app. The day of your departure, pass VAT refund control. And later, transfer your refunds to your credit card or bank account. No waits, no queues!",
+    "title3": "Ready to begin?",
+    "paragraph3": "So you can keep track of any important events on your trip.",
+    "continue": "Continue",
+    "close": "Skip"
+  },
+  "notificationPermission": {
+    "title": "Turn notifications on",
+    "paragraph": "So you can keep track of any important events on your trip.",
+    "cancel": "CANCEL",
+    "ok": "OK"
+  },
+  "locationPermission": {
+    "title": "Share your location",
+    "paragraph": "So we can share local information with you",
+    "cancel": "CANCEL",
+    "ok": "OK"
+  },
+  "alertsTab": {
+    "title": "ALERTS",
+    "newOnes": "New",
+    "previous": "Existing",
+    "noNewAlert": "No new notifications",
+    "noOldAlert": "No existing notifications",
+    "noAlert": "You haven't any alert yet"
+  },
+  "closeTrip": {
+    "header": "CLOSE TRIP",
+    "alert": {
+      "title": "Ready to leave? ",
+      "text": "Already in the port or airport for your departure? Follow the instructions to authorize your refunds"
+    },
+    "step1": {
+      "label": "Summary",
+      "title": "Summary of your trip",
+      "refundable": "Refundable",
+      "invoicesRefundables": "Refundable receipts"
+    },
+    "step2": {
+      "label": "Customs",
+      "title": "Go to customs",
+      "text": "Prepare to display the codes from the receipts to the DIVA machine in the invoice stamping area.",
+      "where": "Where can I find it?",
+      "machine": "What does the machine look like?",
+      "machineModal": "The DIVA validation machine looks like this",
+      "code": "How do I display the codes?",
+      "codeModal": "Put the codes in front of the sensor at waist height."
+    },
+    "step3": {
+      "label": "Scan",
+      "title": "Scan the codes"
+    },
+    "invoiceCode": {
+      "titleH1": "Receipt",
+      "titleH2": "Reimbursable amount "
+    },
+    "success": "Thank you for using Woonivers. We are validating your information with the tax agency",
+    "waitingRefund": "Awaiting confirmation of your refund"
+  },
+  "boardingScanPermission": {
+    "title": "Boarding pass",
+    "paragraph": "We require a photo of your boarding pass before we can reimburse your taxes. We cannot process your refund until we have verified this document.",
+    "gallery": "GALLERY",
+    "takePhoto": "TAKE A PHOTO"
+  },
+  "boardingScan": {
+    "title": "Looking good?",
+    "paragraph": "Please ensure that the two pages are visible, and that the text is legible."
+  },
+  "noSchengen": {
+    "noSchengen": {
+      "paragraph": "You are not leaving the Schengen area yet, so you should follow the steps below.",
+      "titleStep1": "PRINT RECEIPTS",
+      "paragraphStep1": "Print the email that we have sent which contains the details of your refund, and the instructions once you have arrived to your next destination",
+      "titleStep2": "VALIDATE DOCUMENTS",
+      "paragraphStep2": "When you arrive to the airport to leave the Schengen zone, go to customs and ask to have the documents stamped to validate them.",
+      "titleStep3": "SEND DOCUMENTS",
+      "paragraphStep3": "Send proof of the validation which they provided in customs"
+    }
+  },
+  "profile": {
+    "header": "PROFILE AND SETTINGS",
+    "logout": "Close session",
+    "residenceCountry": "Country of residence",
+    "telephone": "Telephone number",
+    "birthDate": "Date of birth",
+    "passportNumber": "Passport number",
+    "email": "Email",
+    "security": "Security",
+    "changePassword": "Change password",
+    "aboutUs": "About us",
+    "privacyPolicy": "Privacy policy",
+    "termsConditions": "Terms and conditions",
+    "updateTelephone": "Update telephone number",
+    "saveUpdate": "SAVE"
+  },
+  "billingInfo": {
+    "header": "BILLING INFORMATION",
+    "title": "We require an invoice containing the following information",
+    "name": "First name",
+    "surname": "Surname",
+    "passport": "Passport",
+    "address": "Address",
+    "zip": "Postcode",
+    "city": "City",
+    "region": "County",
+    "country": "Country"
+  },
+  "changeRecoverPassword": {
+    "changeTitle": "Change your password",
+    "changeParagraph": "We will send instructions to change your password via email",
+    "recoverTitle": "Recover your password",
+    "recoverParagraph": "Enter your email to regain access to your Woonivers account",
+    "postSend": "We have sent you an email to reset your password. Please check your inbox.",
+    "notReceived": "Haven´t received an email?",
+    "sendAgain": "Resend",
+    "login": "LOGIN"
+  },
+  "savings": {
+    "available": "Available",
+    "manageFundsButton": "MANAGE FUNDS",
+    "emptyMovements": "No movements to display",
+    "titleMovements": "Movements",
+    "movementWithCreditCard": "Withdrawal to Credit card",
+    "bankTransfer": "Withdrawal to Bank Account",
+    "modalOkTitle": "Congratulations",
+    "modalOkParagraph": "You have successfully withdrawn the funds"
+  },
+  "modalNoToken": {
+    "title": "Your session has expired",
+    "paragraph": "For your security, the current session has expired. Return to login."
+  },
+  "invoices": {
+    "header": "MY BUYS",
+    "finishTrip": "CLOSE TRIP",
+    "textNextAmount": "Refundable",
+    "ACTION_REQUIRED": "Require your attention",
+    "IN_PROCESS": "Processing",
+    "REJECTED": "Not accepted",
+    "APPROVED": "Pre-accepted",
+    "badImage": "The image is not readable",
+    "badInvoice": "Problem with the receipt",
+    "badSerial": "Missing serial numbers",
+    "noInvoices": "You haven't scanned any receipt yet"
+  },
+  "invoicesList": {
+    "ACTION_REQUIRED_NON_READABLE": "The image is not readable",
+    "ACTION_REQUIRED_SERIAL_NUMBER": "Missing serial numbers",
+    "REJECTED": "Problem with the bill",
+    "scanned": "Scanned the",
+    "toThe": "at",
+    "refund": "Refund"
+  },
+  "invoiceDetail": {
+    "remake": "RETAKE",
+    "imageScannedRecomendation": {
+      "1": "1. It will stretch the receipt",
+      "2": "2. Place it on a flat surface",
+      "3": "3. Make sure it is well lit (you can always use the flash)",
+      "4": "4. Place the camera parallel to the receipt",
+      "title": "Please keep in mind these recommendations:"
+    },
+    "IN_PROCESS": "Processing",
+    "ACTION_REQUIRED_NON_READABLE": "The image is not readable",
+    "APPROVED": "Refund pre-validated",
+    "ACTION_REQUIRED_SERIAL_NUMBER": "Enter the serial number to validate your refund",
+    "REJECTED": "Rejected receipt",
+    "serialNumber": "Serial number",
+    "invoice": "Receipt",
+    "save": "SAVE",
+    "itsArequirement": "It is an important requirement of the Tax Agency to process the refund.",
+    "isCorrect": "Make sure it is correct.",
+    "amountRefund": "Reimbursable amount",
+    "productsRefund": "Reimbursable items",
+    "productsNoRefund": "Non-refundable items",
+    "yourInvoice": "Your receipt",
+    "rememberSaveOriginalInvoice": "Remember to keep the original receipt, you may need it later",
+    "rejectedInvoice": "Receipt rejected by the DIVA system due to a problem related to the invoice number provided by the retailer.",
+    "CIF": "Tax ID"
+  },
+  "rejectionCode": {
+    "test": "THIS IS A REJECTION CODE FOR TESTING"
+  },
+  "cameraPermission": {
+    "title": "Camera permissions",
+    "paragraph": "In order to scan your receipts the application needs access to your camera.",
+    "paragraphFallback": "It seems that you have permanently denied the camera permissions for this application, you must activate them in the phone settings."
+  },
+  "bankMovementForm": {
+    "title": "Payment details",
+    "holderName": "Holder's Name",
+    "iban": "IBAN",
+    "swift": "SWIFT",
+    "submit": "SUBMIT"
+  }
+}

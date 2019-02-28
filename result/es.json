@@ -1,0 +1,383 @@
+{
+  "test": {
+    "howTo": "HOW TO",
+    "headerTextRgight": "Saltar"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancelar",
+    "back": "Atrás",
+    "close": "SALTAR",
+    "dontShowAgain": "No volver a mostrar",
+    "continue": "CONTINUAR",
+    "next": "SIGUIENTE",
+    "start": "INICIO",
+    "send": "ENVIAR"
+  },
+  "errors": {
+    "title": "Algo ha fallado",
+    "paragraph": "La operación no ha podido ser completada con éxito. Inténtelo otra vez.",
+    "invalidEmail": "Cuenta de correo invalida"
+  },
+  "register": {
+    "title": "¿Cuál es tu email?",
+    "paragraph": "Te enviaremos información importante para el reembolso de tu dinero.",
+    "emailPlaceholder": "Introduce tu email",
+    "emailFormatError": "Introduce una dirección de email válida",
+    "rrssLabel": "O usa tus redes sociales",
+    "labelButtonLogin": "Ya tienes una cuenta",
+    "buttonLogin": "INICIA SESIÓN",
+    "buttonContinue": "CONTINUAR"
+  },
+  "login": {
+    "title": "¿Cuál es tu email?",
+    "paragraph": "Introduce el email con el que creaste tu cuenta en woonivers.",
+    "emailPlaceholder": "Introduce tu email",
+    "emailFormatError": "Introduce una dirección de email válida",
+    "emailAccountError": "No existe ninguna cuenta con ese email",
+    "buttonLogin": "CONTINUAR"
+  },
+  "loginPassword": {
+    "title": "Introduce tu contraseña",
+    "passwordPlaceholder": "Tu contraseña",
+    "passwordError": "La contraseña no es correcta",
+    "shortPassword": "La contraseña es muy corta",
+    "buttonForgotPassword": "¿No recuerdas tu contraseña?",
+    "buttonLogin": "CONTINUAR",
+    "auth/account-exists-with-different-credential": "Ya existe una cuenta con esta dirección de correo.",
+    "auth/email-already-in-use": "Este email ya está en uso",
+    "auth/invalid-email": "La dirección de correo introducida no es válida.",
+    "auth/weak-password": "Contraseña muy débil",
+    "auth/invalid-credential": "Las credenciales no son correctas o han caducado.",
+    "auth/operation-not-allowed": "Operación no permitida.",
+    "auth/user-disabled": "Este usuario está desahabilitado.",
+    "auth/user-not-found": "Usuario no encontrado.",
+    "auth/wrong-password": "Contraseña incorrecta.",
+    "auth/invalid-verification-code": "Código de verificació incorrecto.",
+    "auth/invalid-verification-id": "ID de verificacion no valido."
+  },
+  "registerPassword": {
+    "title": "Elige una contraseña",
+    "paragraph": "Te enviaremos información importante para el reembolso de tu dinero.",
+    "passwordPlaceholder": "Tu contraseña",
+    "passwordError": "Mínimo 6 caracteres",
+    "buttonLogin": "CONTINUAR",
+    "checkboxText1": "Acepto los",
+    "checkboxLinkText1": "términos y condiciones",
+    "checkboxText2": " y",
+    "checkboxLinkText2": "la política de privacidad",
+    "checkboxLink1": "https://woonivers.com/terminos-condiciones/",
+    "checkboxLink2": "https://woonivers.com/politica-privacidad/"
+  },
+  "emailConfirmation": {
+    "title": "Confirma tu email",
+    "paragraph": "Sigue las instrucciones que te hemos enviado a",
+    "textQuestion": "¿No has recibido ningún email?",
+    "buttonSendAgain": "Volver a enviar",
+    "buttonNext": "CONTINUAR",
+    "textSendAgain": "No has recibido ningun email?"
+  },
+  "scanPassportPermission": {
+    "title": "Escanea tu pasaporte",
+    "paragraph": "Para reembolsar impuestos necesitamos una copia de tu pasaporte. Escanea la página donde sale tu foto.",
+    "buttonOk": "CONTINUAR",
+    "buttonCancel": "AHORA NO"
+  },
+  "scanPassport": {
+    "title": "¿Se ve bien?",
+    "paragraph": "Comprueba que aparecen las dos páginas completas y se distingue el texto.",
+    "errorSavingTitle": "Error al subir el pasaporte.",
+    "errorSavingText": "Ha sucedido un error al guardar el pasaporte, por favor inténtalo más tarde"
+  },
+  "sharedScanConfirmationImage": {
+    "buttonOk": "CONTINUAR",
+    "buttonRetake": "REPETIR"
+  },
+  "selfiePermission": {
+    "title": "Hazte un selfie",
+    "paragraph": "Para verificar tu identidad necesitamos una foto de tu cara.",
+    "buttonOk": "OK"
+  },
+  "selfie": {
+    "title": "¿Cómo te ves?",
+    "paragraph": "Asegúrate de que se te reconoce bien"
+  },
+  "invoiceAddress": {
+    "title": "Dirección de facturación",
+    "paragraph": "Te será muy útil para enseñarla en la tienda cuando pidas una factura.",
+    "address": "Dirección",
+    "postalCode": "C.P.",
+    "city": "Ciudad",
+    "region": "Estado/Provincia/Región",
+    "country": "País",
+    "buttonOk": "GUARDAR",
+    "errorSavingTitle": "Error al guardar la dirección",
+    "errorSavingText": "Lo sentimos, ha sucedido un error al guardar la dirección. Inténtalo más tarde."
+  },
+  "finish": {
+    "title": "¡Enhorabuena!",
+    "paragraph": "Comienza a disfrutar de tu dinero con woonivers",
+    "buttonBegin": "Empezar"
+  },
+  "startTrip": {
+    "title": "Necesitamos información sobre tu viaje",
+    "getStarted": "COMENZAR",
+    "dateEnd": "¿Cuándo sales de España?",
+    "departureType": {
+      "title": "¿Cómo te vas del país?",
+      "plane": "Avión",
+      "boat": "Barco"
+    },
+    "destination": "País de destino",
+    "transportNumber": {
+      "F": "Número de vuelo",
+      "B": "Número de trayecto"
+    }
+  },
+  "home": {
+    "title": "MI VIAJE A ESPAÑA",
+    "textNextAmount": "Reembolsables",
+    "titleIsSchengen": "Nuestro servicio no esta disponible para los residentes en paises de la Union Europea. Te enviaremos un email en cuanto estemos en más países.",
+    "btnScanText1": "En la tienda",
+    "btnScanText2": "Escanea tu recibo",
+    "btnScanText": "ESCANEA",
+    "btnCloseText1": "En el aeropuerto",
+    "btnCloseText2": "Pasar el control",
+    "btnCloseText": "IR"
+  },
+  "homeAlerts": {
+    "passport": "Hay 2 recibos que requieren tu atención."
+  },
+  "HomeInvoiceResume": {
+    "inProcess": "Procesando",
+    "actionRequired": "Rechazadas",
+    "error": "No aceptadas",
+    "approved": "Preaceptadas"
+  },
+  "tabs": {
+    "home": "INICIO",
+    "invoices": "COMPRAS",
+    "savings": "CARTERA",
+    "alerts": "ALERTAS",
+    "support": "SOPORTE"
+  },
+  "countryPicker": {
+    "filterPlaceholder": "Filtro"
+  },
+  "datePicker": {
+    "titleIOS": "Selecciona una fecha",
+    "cancelTextIOS": "Cancelar",
+    "confirmTextIOS": "Confirmar"
+  },
+  "preScanInvoice": {
+    "title": "¿Preparado para solicitar el tax free?",
+    "paragraph": "Por favor, asegrúrate de que la tienda acepta Woonivers Tax Free y ten preparado el recibo."
+  },
+  "scanInvoice": {
+    "title": "¿Se ve bien?",
+    "paragraph": "Comprueba que todos los datos del recibo son legibles."
+  },
+  "saveInvoice": {
+    "title": "Guarda tu recibo",
+    "paragraph": "Puedes necesitarlo más adelante."
+  },
+  "walkThroughSwiper": {
+    "title1": "¡Bienvenido a Scan & Go Tax Free!",
+    "paragraph1": "¿Resides fuera de la Unión Europea? Viajas a España? Con Woonivers puedes completar la devolución del IVA en las tiendas afiliadas de manera fácil.",
+    "title2": "Escanea, valida, y recibe el dinero",
+    "paragraph2": "Obtén tu reembolso en dos simples pasos: cuando compres en tiendas afiliadas, escanea tu recibo con esta aplicación. El día de tu regreso, pasa el control de devolución de IVA. Luego, transfiere sus reembolsos a tu tarjeta de crédito o cuenta bancaria. ¡Sin esperas, sin colas!",
+    "title3": "¿Preparado para empezar?",
+    "paragraph3": "Empieza a realizar un seguimiento de los eventos importantes de tu viaje.",
+    "continue": "CONTINUAR",
+    "close": "Saltar"
+  },
+  "notificationPermission": {
+    "title": "Activa las notificaciones",
+    "paragraph": "Para que te guíemos en los procesos y te avisemos de las cosas importantes.",
+    "cancel": "DENEGAR",
+    "ok": "PERMITIR"
+  },
+  "locationPermission": {
+    "title": "Necesitamos tu ubicación",
+    "paragraph": "Así podremos mostrarte informacion de interés cerca de ti.",
+    "cancel": "DENEGAR",
+    "ok": "PERMITIR"
+  },
+  "alertsTab": {
+    "title": "ALERTAS",
+    "newOnes": "Nuevas",
+    "previous": "Anteriores",
+    "noNewAlert": "Ninguna notificación nueva.",
+    "noOldAlert": "Ninguna notificación antigua.",
+    "noAlert": "No tienes ninguna alerta todavía"
+  },
+  "closeTrip": {
+    "header": "CERRAR VIAJE",
+    "alert": {
+      "title": "¿Preparado para irte?",
+      "text": "¿Ya en el puerto o aeropuerto para tu salida? Sigue las instrucciones para autorizar tus reembolsos."
+    },
+    "step1": {
+      "label": "Resumen",
+      "title": "Resumen de tu viaje",
+      "refundable": "Reembolsables",
+      "invoicesRefundables": "Recibos reembolsables"
+    },
+    "step2": {
+      "label": "Aduana",
+      "title": "Dirígete a aduanas",
+      "text": "Prepárate para exhibir los códigos de recibos en la máquina DIVA en la zona de sellado de facturas.",
+      "where": "¿Dónde es?",
+      "machine": "¿Cómo es la máquina?",
+      "machineModal": "La máquina de validación DIVA tiene este aspecto.",
+      "code": "¿Cómo mostrar los códigos?",
+      "codeModal": "Pon los códigos delante del sensor que está a la altura de tu cintura."
+    },
+    "step3": {
+      "label": "Escanea",
+      "title": "Escanea los códigos"
+    },
+    "invoiceCode": {
+      "titleH1": "Recibo",
+      "titleH2": "Cantidad reembolsable"
+    },
+    "success": "Gracias por utilizar woonivers. Estamos validando tu información con la agencia tributaria.",
+    "waitingRefund": "Esperando confirmación de tu reembolso"
+  },
+  "boardingScanPermission": {
+    "title": "Tarjeta de embarque",
+    "paragraph": "Necesitamos una foto de tu tarjeta de embarque para proceder al reembolso de tus impuestos. No podremos realizar el reembolso hasta que verifiquemos el documento.",
+    "gallery": "GALERÍA",
+    "takePhoto": "TOMAR FOTO"
+  },
+  "boardingScan": {
+    "title": "¿Se ve bien?",
+    "paragraph": "Comprueba que aparecen las dos páginas completas y se distingue el texto."
+  },
+  "noSchengen": {
+    "noSchengen": {
+      "paragraph": "No estás saliendo de la zona Schengen aún, por lo que debes seguir los siguientes pasos.",
+      "titleStep1": "IMPRIME LOS RECIBOS",
+      "paragraphStep1": "Imprime el email que te hemos enviado con los detalles de tu reembolso y las instrucciones una vez estes en tu siguiente destino.",
+      "titleStep2": "VALIDA LOS DOCUMENTOS",
+      "paragraphStep2": "Cuando estes en el aeropuerto para dejar la zona Schengen, ve a aduanas y pide que te sellen los documentos para validarlos.",
+      "titleStep3": "ENVIANOS LOS DOCUMENTOS",
+      "paragraphStep3": "Mándanos la prueba de la validación que te dieron en la aduana."
+    }
+  },
+  "profile": {
+    "header": "PERFIL Y AJUSTES",
+    "logout": "Cerrar sesión",
+    "residenceCountry": "País de residencia",
+    "telephone": "Número de teléfono",
+    "birthDate": "Fecha de nacimiento",
+    "passportNumber": "Nº Pasaporte",
+    "email": "Email",
+    "security": "Seguridad",
+    "changePassword": "Cambiar contraseña",
+    "aboutUs": "Sobre nosotros",
+    "privacyPolicy": "Política de privacidad",
+    "termsConditions": "Términos y condiciones",
+    "updateTelephone": "Editar teléfono",
+    "saveUpdate": "GUARDAR"
+  },
+  "billingInfo": {
+    "header": "INFO DE FACTURACIÓN",
+    "title": "Por favor, necesito una factura con estos datos.",
+    "name": "Nombre",
+    "surname": "Apellidos",
+    "passport": "Pasaporte",
+    "address": "Dirección",
+    "zip": "C.P.",
+    "city": "Ciudad",
+    "region": "Provincia/Estado",
+    "country": "País"
+  },
+  "changeRecoverPassword": {
+    "changeTitle": "Cambia tu contraseña",
+    "changeParagraph": "Te enviaremos las instrucciones para cambiar tu contreseña a tu email.",
+    "recoverTitle": "Recupera tu contraseña",
+    "recoverParagraph": "Introduce tu email para recuperar el acceso a tu cuenta de Woonivers.",
+    "postSend": "Te hemos enviado un email para que regeneres tu contraseña. Por favor revisa tu bandeja de entrada.",
+    "notReceived": "¿No has recibido ningún email?",
+    "sendAgain": "Volver a enviar",
+    "login": "INICIAR SESIÓN"
+  },
+  "savings": {
+    "available": "Disponible",
+    "manageFundsButton": "SACAR FONDOS",
+    "emptyMovements": "No tienes ningún movimiento todavía",
+    "titleMovements": "Movimientos de la cartera",
+    "movementWithCreditCard": "Retirada a tarjeta de crédito",
+    "bankTransfer": "Transferencia bancaria",
+    "modalOkTitle": "Felicidades",
+    "modalOkParagraph": "Has retirado los fondos con éxito."
+  },
+  "modalNoToken": {
+    "title": "Tu sesión ha caducado",
+    "paragraph": "Por tu seguridad, la sesión actual ha caducado. Vuelve a iniciar sesión."
+  },
+  "invoices": {
+    "header": "COMPRAS",
+    "finishTrip": "CERRAR VIAJE",
+    "textNextAmount": "Reembolsarse",
+    "ACTION_REQUIRED": "Requieren tu atención",
+    "IN_PROCESS": "Procesando",
+    "REJECTED": "No aceptadas",
+    "APPROVED": "Preaceptadas",
+    "badImage": "La image no es legible",
+    "badInvoice": "Problema con el recibo",
+    "badSerial": "Faltan números de serie",
+    "noInvoices": "Aún no has escaneado ningún recibo."
+  },
+  "invoicesList": {
+    "ACTION_REQUIRED_NON_READABLE": "La imagen no es legible",
+    "ACTION_REQUIRED_SERIAL_NUMBER": "Faltan números de serie",
+    "REJECTED": "Problema con la factura",
+    "scanned": "Escaneada el",
+    "toThe": "a las",
+    "refund": "Reembolso"
+  },
+  "invoiceDetail": {
+    "remake": "REHACER",
+    "imageScannedRecomendation": {
+      "1": "1. Estira bien el recibo",
+      "2": "2. Colocala en una superficie plana",
+      "3": "3. Asegurate de que este bien iluminado (siempre puedes usar el flash)",
+      "4": "4. Coloca la camara paralela a la factura",
+      "title": "Por favor ten en cuenta estas recomendaciones:"
+    },
+    "IN_PROCESS": "Procesando",
+    "ACTION_REQUIRED_NON_READABLE": "La imagen no es legible",
+    "APPROVED": "Devolución pre-validada",
+    "ACTION_REQUIRED_SERIAL_NUMBER": "Introduce el Nº de serie para validar tu reembolso",
+    "REJECTED": "Recibo rechado",
+    "serialNumber": "Nº de serie",
+    "invoice": "Recibo",
+    "save": "GUARDAR",
+    "itsArequirement": "Es un requerimiento importante de la Agencia Tributaria para tramitar el reembolso.",
+    "isCorrect": "Asegurate de que es correcto.",
+    "amountRefund": "Cantidad reembolsable",
+    "productsRefund": "Articulos reembolsables",
+    "productsNoRefund": "Articulos no reembolsables",
+    "yourInvoice": "Tu recibo",
+    "rememberSaveOriginalInvoice": "Recuerda conservar el recibo original, puedes necesitarlo más adelante",
+    "rejectedInvoice": "Recibo rechazado por el sistema DIVA a causa de un problema relacionado con el número de factura que proporcionó el retailer.",
+    "CIF": "CIF"
+  },
+  "rejectionCode": {
+    "test": "Este es un mensaje de error diva para testear"
+  },
+  "cameraPermission": {
+    "title": "Permisos de cámara",
+    "paragraph": "Para poder escanear tus recibos la aplicación necesita acceso a tu cámara.",
+    "paragraphFallback": "Parece que has denegado permanentemente los permisos de la cámara para esta aplicación, debes activarlos en los ajustes del teléfono."
+  },
+  "bankMovementForm": {
+    "title": "Detalles de pago",
+    "holderName": "Nombre del titular",
+    "iban": "IBAN",
+    "swift": "SWIFT",
+    "submit": "ENVIAR"
+  }
+}
