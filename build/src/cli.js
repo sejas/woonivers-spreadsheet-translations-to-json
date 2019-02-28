@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -34,32 +33,33 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
-Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = require("../../core/dist/index");
-module.exports = {
-    name: 'woo-translate',
-    run: function (_a) {
-        var print = _a.print, _b = _a.parameters.options, path = _b.path, id = _b.id;
-        return __awaiter(_this, void 0, void 0, function () {
-            var error;
-            return __generator(this, function (_c) {
-                error = false;
-                if (!path) {
-                    print.error('You must specify the path where you want to save the `${lang}.json` files');
-                    error = true;
-                }
-                if (!path) {
-                    print.error('You must specify the *Google Spreadsheat ID*');
-                    error = true;
-                }
-                if (error) {
-                    return [2 /*return*/, null];
-                }
-                print.info(index_1.generateJsonFrom(id, path));
-                return [2 /*return*/];
-            });
+var build = require('gluegun').build;
+/**
+ * Create the cli and kick it off
+ */
+function run(argv) {
+    return __awaiter(this, void 0, void 0, function () {
+        var cli, toolbox;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    cli = build()
+                        .brand('woo-translate')
+                        .src(__dirname)
+                        .plugins('./node_modules', { matching: 'woo-translate-*', hidden: true })
+                        .help() // provides default for help, h, --help, -h
+                        .version() // provides default for version, v, --version, -v
+                        .create();
+                    return [4 /*yield*/, cli.run(argv)
+                        // send it back (for testing, mostly)
+                    ];
+                case 1:
+                    toolbox = _a.sent();
+                    // send it back (for testing, mostly)
+                    return [2 /*return*/, toolbox];
+            }
         });
-    }
-};
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid29vLXRyYW5zbGF0ZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21tYW5kcy93b28tdHJhbnNsYXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLGlCQTZCQTs7QUE1QkEsK0NBQXdEO0FBRXhELE1BQU0sQ0FBQyxPQUFPLEdBQUc7SUFDZixJQUFJLEVBQUUsZUFBZTtJQUNyQixHQUFHLEVBQUUsVUFBTyxFQUtLO1lBSmYsZ0JBQUssRUFFSCwwQkFBcUIsRUFBVixjQUFJLEVBQUUsVUFBRTs7OztnQkFHakIsS0FBSyxHQUFHLEtBQUssQ0FBQTtnQkFDakIsSUFBSSxDQUFDLElBQUksRUFBRTtvQkFDVCxLQUFLLENBQUMsS0FBSyxDQUNULDJFQUEyRSxDQUM1RSxDQUFBO29CQUNELEtBQUssR0FBRyxJQUFJLENBQUE7aUJBQ2I7Z0JBQ0QsSUFBSSxDQUFDLElBQUksRUFBRTtvQkFDVCxLQUFLLENBQUMsS0FBSyxDQUFDLDhDQUE4QyxDQUFDLENBQUE7b0JBQzNELEtBQUssR0FBRyxJQUFJLENBQUE7aUJBQ2I7Z0JBQ0QsSUFBSSxLQUFLLEVBQUU7b0JBQ1Qsc0JBQU8sSUFBSSxFQUFBO2lCQUNaO2dCQUNELEtBQUssQ0FBQyxJQUFJLENBQUMsd0JBQWdCLENBQUMsRUFBRSxFQUFFLElBQUksQ0FBQyxDQUFDLENBQUE7Ozs7S0FFdkM7Q0FDRixDQUFBIn0=
+    });
+}
+module.exports = { run: run };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2xpLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3JjL2NsaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFRLElBQUEsZ0NBQUssQ0FBdUI7QUFFcEM7O0dBRUc7QUFDSCxTQUFlLEdBQUcsQ0FBQyxJQUFJOzs7Ozs7b0JBRWYsR0FBRyxHQUFHLEtBQUssRUFBRTt5QkFDaEIsS0FBSyxDQUFDLGVBQWUsQ0FBQzt5QkFDdEIsR0FBRyxDQUFDLFNBQVMsQ0FBQzt5QkFDZCxPQUFPLENBQUMsZ0JBQWdCLEVBQUUsRUFBRSxRQUFRLEVBQUUsaUJBQWlCLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBRSxDQUFDO3lCQUN4RSxJQUFJLEVBQUUsQ0FBQywyQ0FBMkM7eUJBQ2xELE9BQU8sRUFBRSxDQUFDLGlEQUFpRDt5QkFDM0QsTUFBTSxFQUFFLENBQUE7b0JBR0sscUJBQU0sR0FBRyxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUM7d0JBRW5DLHFDQUFxQztzQkFGRjs7b0JBQTdCLE9BQU8sR0FBRyxTQUFtQjtvQkFFbkMscUNBQXFDO29CQUNyQyxzQkFBTyxPQUFPLEVBQUE7Ozs7Q0FDZjtBQUVELE1BQU0sQ0FBQyxPQUFPLEdBQUcsRUFBRSxHQUFHLEtBQUEsRUFBRSxDQUFBIn0=

@@ -36,30 +36,27 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = require("../../core/dist/index");
 module.exports = {
-    name: 'woo-translate',
-    run: function (_a) {
-        var print = _a.print, _b = _a.parameters.options, path = _b.path, id = _b.id;
-        return __awaiter(_this, void 0, void 0, function () {
-            var error;
-            return __generator(this, function (_c) {
-                error = false;
-                if (!path) {
-                    print.error('You must specify the path where you want to save the `${lang}.json` files');
-                    error = true;
-                }
-                if (!path) {
-                    print.error('You must specify the *Google Spreadsheat ID*');
-                    error = true;
-                }
-                if (error) {
-                    return [2 /*return*/, null];
-                }
-                print.info(index_1.generateJsonFrom(id, path));
-                return [2 /*return*/];
-            });
+    name: 'generate',
+    alias: ['g'],
+    run: function (toolbox) { return __awaiter(_this, void 0, void 0, function () {
+        var parameters, generate, info, name;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    parameters = toolbox.parameters, generate = toolbox.template.generate, info = toolbox.print.info;
+                    name = parameters.first;
+                    return [4 /*yield*/, generate({
+                            template: 'model.ts.ejs',
+                            target: "models/" + name + "-model.js",
+                            props: { name: name }
+                        })];
+                case 1:
+                    _a.sent();
+                    info("Generated file at models/" + name + "-model.js");
+                    return [2 /*return*/];
+            }
         });
-    }
+    }); }
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid29vLXRyYW5zbGF0ZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21tYW5kcy93b28tdHJhbnNsYXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLGlCQTZCQTs7QUE1QkEsK0NBQXdEO0FBRXhELE1BQU0sQ0FBQyxPQUFPLEdBQUc7SUFDZixJQUFJLEVBQUUsZUFBZTtJQUNyQixHQUFHLEVBQUUsVUFBTyxFQUtLO1lBSmYsZ0JBQUssRUFFSCwwQkFBcUIsRUFBVixjQUFJLEVBQUUsVUFBRTs7OztnQkFHakIsS0FBSyxHQUFHLEtBQUssQ0FBQTtnQkFDakIsSUFBSSxDQUFDLElBQUksRUFBRTtvQkFDVCxLQUFLLENBQUMsS0FBSyxDQUNULDJFQUEyRSxDQUM1RSxDQUFBO29CQUNELEtBQUssR0FBRyxJQUFJLENBQUE7aUJBQ2I7Z0JBQ0QsSUFBSSxDQUFDLElBQUksRUFBRTtvQkFDVCxLQUFLLENBQUMsS0FBSyxDQUFDLDhDQUE4QyxDQUFDLENBQUE7b0JBQzNELEtBQUssR0FBRyxJQUFJLENBQUE7aUJBQ2I7Z0JBQ0QsSUFBSSxLQUFLLEVBQUU7b0JBQ1Qsc0JBQU8sSUFBSSxFQUFBO2lCQUNaO2dCQUNELEtBQUssQ0FBQyxJQUFJLENBQUMsd0JBQWdCLENBQUMsRUFBRSxFQUFFLElBQUksQ0FBQyxDQUFDLENBQUE7Ozs7S0FFdkM7Q0FDRixDQUFBIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2VuZXJhdGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvY29tbWFuZHMvZ2VuZXJhdGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsaUJBdUJBOztBQXJCQSxNQUFNLENBQUMsT0FBTyxHQUFHO0lBQ2YsSUFBSSxFQUFFLFVBQVU7SUFDaEIsS0FBSyxFQUFFLENBQUMsR0FBRyxDQUFDO0lBQ1osR0FBRyxFQUFFLFVBQU8sT0FBdUI7Ozs7O29CQUUvQixVQUFVLEdBR1IsT0FBTyxXQUhDLEVBQ0UsUUFBUSxHQUVsQixPQUFPLGtCQUZXLEVBQ1gsSUFBSSxHQUNYLE9BQU8sV0FESSxDQUNKO29CQUVMLElBQUksR0FBRyxVQUFVLENBQUMsS0FBSyxDQUFBO29CQUU3QixxQkFBTSxRQUFRLENBQUM7NEJBQ2IsUUFBUSxFQUFFLGNBQWM7NEJBQ3hCLE1BQU0sRUFBRSxZQUFVLElBQUksY0FBVzs0QkFDakMsS0FBSyxFQUFFLEVBQUUsSUFBSSxNQUFBLEVBQUU7eUJBQ2hCLENBQUMsRUFBQTs7b0JBSkYsU0FJRSxDQUFBO29CQUVGLElBQUksQ0FBQyw4QkFBNEIsSUFBSSxjQUFXLENBQUMsQ0FBQTs7OztTQUNsRDtDQUNGLENBQUEifQ==

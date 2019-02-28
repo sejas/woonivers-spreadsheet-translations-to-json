@@ -1,12 +1,12 @@
 {
   "name": "google-spreadsheets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently --kill-others \"tsc -w\" \"nodemon --inspect dist/index.js --delay 500ms --watch dist/index.js\"",
-    "build": "tsc && cp -R dist ../WooniversApp/woo-scripts/translate && cp -R src ../WooniversApp/woo-scripts/translate"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
