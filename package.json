@@ -1,6 +1,6 @@
 {
   "name": "woo-translate",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "woo-translate CLI",
   "bin": {
     "woo-translate": "bin/woo-translate"
@@ -32,7 +32,9 @@
   "dependencies": {
     "typescript": "3.2.2",
     "ts-node": "^7.0.1",
-    "gluegun": "^2.1.0"
+    "gluegun": "^2.1.0",
+    "googleapis": "^27.0.0",
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^10.12.12",
@@ -42,7 +44,9 @@
     "tslint-config-prettier": "^1.17.0",
     "tslint-config-standard": "^8.0.1",
     "prettier": "^1.12.1",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "@types/gapi": "0.0.36",
+    "@types/node-fetch": "^2.1.4"
   },
   "jest": {
     "preset": "ts-jest",

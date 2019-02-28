@@ -1,5 +1,5 @@
 import { GluegunToolbox } from 'gluegun'
-import { generateJsonFrom } from '../../core/dist/index'
+import { generateJsonFrom } from '../core'
 
 const PREFIX = 'WOO-TRANSLATE:'
 
