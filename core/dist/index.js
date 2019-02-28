@@ -60,7 +60,12 @@ debug = false, callbackGlobal = (lang) => null) => {
             access_type: 'offline',
             scope: SCOPES
         });
-        log.info(`Authorize this app by visiting this url: ${authUrl}`);
+        console.log(`
+    This is the first time you execute this command.
+    Please, be gentle and go to this URL to generate a new token.
+    The token will be saved in this path "~/.woo/woo-token.json".
+    CLICK HERE --> : ${authUrl}`);
+        console.log(`Authorize this app by visiting this url: ${authUrl}`);
         const rl = readline.createInterface({
             input: process.stdin,
             output: process.stdout
