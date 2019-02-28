@@ -1,8 +1,7 @@
 {
   "name": "woo-translate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "woo-translate CLI",
-  "private": true,
   "bin": {
     "woo-translate": "bin/woo-translate"
   },
@@ -20,6 +19,7 @@
     "tsconfig.json",
     "tslint.json",
     "build",
+    "core",
     "LICENSE",
     "readme.md",
     "docs",

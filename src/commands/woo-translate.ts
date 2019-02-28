@@ -39,7 +39,7 @@ module.exports = {
 
     const fullPath = filesystem.path(path)
     const directoryExists = filesystem.isDirectory(fullPath)
-    const langsToTranslate = langs.split(',') || ['en', 'es']
+    const langsToTranslate = (langs && langs.split(',')) || ['en', 'es']
 
     if (directoryExists) {
       print.info(
