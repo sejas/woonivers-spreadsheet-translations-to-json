@@ -7,23 +7,30 @@ const cli = async cmd =>
 
 test('outputs version', async () => {
   const output = await cli('--version')
-  expect(output).toContain('0.0.1')
+  expect(output).toContain('0.0.2')
 })
 
 test('outputs help', async () => {
   const output = await cli('--help')
-  expect(output).toContain('0.0.1')
+  expect(output).toContain('0.0.2')
 })
 
-test('generates file', async () => {
-  const output = await cli('generate foo')
-
-  expect(output).toContain('Generated file at models/foo-model.ts')
-  const foomodel = filesystem.read('models/foo-model.ts')
-
-  expect(foomodel).toContain(`module.exports = {`)
-  expect(foomodel).toContain(`name: 'foo'`)
-
-  // cleanup artifact
-  filesystem.remove('models')
+test('outputs help', async () => {
+  const output = await cli('')
+  expect(output).toContain(
+    'WOO-TRANSLATE: You must specify the *id* of Google Spreadsheat'
+  )
 })
+
+// test('generates file', async () => {
+//   const output = await cli('generate foo')
+
+//   expect(output).toContain('Generated file at models/foo-model.ts')
+//   const foomodel = filesystem.read('models/foo-model.ts')
+
+//   expect(foomodel).toContain(`module.exports = {`)
+//   expect(foomodel).toContain(`name: 'foo'`)
+
+//   // cleanup artifact
+//   filesystem.remove('models')
+// })
