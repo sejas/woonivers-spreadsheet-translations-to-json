@@ -37,29 +37,54 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../../core/dist/index");
+var PREFIX = 'WOO-TRANSLATE:';
 module.exports = {
     name: 'woo-translate',
     run: function (_a) {
-        var print = _a.print, _b = _a.parameters.options, path = _b.path, id = _b.id;
+        var print = _a.print, _b = _a.parameters.options, path = _b.path, id = _b.id, langs = _b.langs, verbose = _b.verbose, filesystem = _a.filesystem;
         return __awaiter(_this, void 0, void 0, function () {
-            var error;
+            var error, finished, fullPath, directoryExists, langsToTranslate;
             return __generator(this, function (_c) {
                 error = false;
+                finished = function (lang) {
+                    return print.info(PREFIX + " **" + lang + "** translated ok.");
+                };
+                /**
+                 * Error PATH
+                 */
                 if (!path) {
-                    print.error('You must specify the path where you want to save the `${lang}.json` files');
+                    print.error(PREFIX + " You must specify the *path* where you want to save the \"{lang}.json\" files");
                     error = true;
                 }
+                /**
+                 * Error Google Spreadsheet ID
+                 */
                 if (!path) {
-                    print.error('You must specify the *Google Spreadsheat ID*');
+                    print.error(PREFIX + " You must specify the *id* of Google Spreadsheat");
                     error = true;
                 }
                 if (error) {
                     return [2 /*return*/, null];
                 }
-                print.info(index_1.generateJsonFrom(id, path));
+                fullPath = filesystem.path(path);
+                directoryExists = filesystem.isDirectory(fullPath);
+                langsToTranslate = (langs && langs.split(',')) || ['en', 'es'];
+                if (directoryExists) {
+                    print.info(PREFIX + " Reading from Spreadsheet ID: " + id + " and destination path: " + fullPath);
+                    try {
+                        index_1.generateJsonFrom(id, fullPath, langsToTranslate, !!verbose, finished);
+                    }
+                    catch (error) {
+                        print.error(PREFIX + " Ups!, we got an error.");
+                        print.error(error);
+                    }
+                }
+                else {
+                    print.error(PREFIX + " Given path " + fullPath + " doesn't exist");
+                }
                 return [2 /*return*/];
             });
         });
     }
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid29vLXRyYW5zbGF0ZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21tYW5kcy93b28tdHJhbnNsYXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLGlCQTZCQTs7QUE1QkEsK0NBQXdEO0FBRXhELE1BQU0sQ0FBQyxPQUFPLEdBQUc7SUFDZixJQUFJLEVBQUUsZUFBZTtJQUNyQixHQUFHLEVBQUUsVUFBTyxFQUtLO1lBSmYsZ0JBQUssRUFFSCwwQkFBcUIsRUFBVixjQUFJLEVBQUUsVUFBRTs7OztnQkFHakIsS0FBSyxHQUFHLEtBQUssQ0FBQTtnQkFDakIsSUFBSSxDQUFDLElBQUksRUFBRTtvQkFDVCxLQUFLLENBQUMsS0FBSyxDQUNULDJFQUEyRSxDQUM1RSxDQUFBO29CQUNELEtBQUssR0FBRyxJQUFJLENBQUE7aUJBQ2I7Z0JBQ0QsSUFBSSxDQUFDLElBQUksRUFBRTtvQkFDVCxLQUFLLENBQUMsS0FBSyxDQUFDLDhDQUE4QyxDQUFDLENBQUE7b0JBQzNELEtBQUssR0FBRyxJQUFJLENBQUE7aUJBQ2I7Z0JBQ0QsSUFBSSxLQUFLLEVBQUU7b0JBQ1Qsc0JBQU8sSUFBSSxFQUFBO2lCQUNaO2dCQUNELEtBQUssQ0FBQyxJQUFJLENBQUMsd0JBQWdCLENBQUMsRUFBRSxFQUFFLElBQUksQ0FBQyxDQUFDLENBQUE7Ozs7S0FFdkM7Q0FDRixDQUFBIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid29vLXRyYW5zbGF0ZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21tYW5kcy93b28tdHJhbnNsYXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLGlCQTBEQTs7QUF6REEsK0NBQXdEO0FBRXhELElBQU0sTUFBTSxHQUFHLGdCQUFnQixDQUFBO0FBRS9CLE1BQU0sQ0FBQyxPQUFPLEdBQUc7SUFDZixJQUFJLEVBQUUsZUFBZTtJQUNyQixHQUFHLEVBQUUsVUFBTyxFQU1LO1lBTGYsZ0JBQUssRUFFSCwwQkFBcUMsRUFBMUIsY0FBSSxFQUFFLFVBQUUsRUFBRSxnQkFBSyxFQUFFLG9CQUFPLEVBRXJDLDBCQUFVOzs7O2dCQUVOLEtBQUssR0FBRyxLQUFLLENBQUE7Z0JBQ1gsUUFBUSxHQUFHLFVBQUMsSUFBWTtvQkFDNUIsT0FBQSxLQUFLLENBQUMsSUFBSSxDQUFJLE1BQU0sV0FBTSxJQUFJLHNCQUFtQixDQUFDO2dCQUFsRCxDQUFrRCxDQUFBO2dCQUVwRDs7bUJBRUc7Z0JBQ0gsSUFBSSxDQUFDLElBQUksRUFBRTtvQkFDVCxLQUFLLENBQUMsS0FBSyxDQUNOLE1BQU0sa0ZBQTZFLENBQ3ZGLENBQUE7b0JBQ0QsS0FBSyxHQUFHLElBQUksQ0FBQTtpQkFDYjtnQkFDRDs7bUJBRUc7Z0JBQ0gsSUFBSSxDQUFDLElBQUksRUFBRTtvQkFDVCxLQUFLLENBQUMsS0FBSyxDQUFJLE1BQU0scURBQWtELENBQUMsQ0FBQTtvQkFDeEUsS0FBSyxHQUFHLElBQUksQ0FBQTtpQkFDYjtnQkFFRCxJQUFJLEtBQUssRUFBRTtvQkFDVCxzQkFBTyxJQUFJLEVBQUE7aUJBQ1o7Z0JBRUssUUFBUSxHQUFHLFVBQVUsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUE7Z0JBQ2hDLGVBQWUsR0FBRyxVQUFVLENBQUMsV0FBVyxDQUFDLFFBQVEsQ0FBQyxDQUFBO2dCQUNsRCxnQkFBZ0IsR0FBRyxDQUFDLEtBQUssSUFBSSxLQUFLLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQyxDQUFDLElBQUksQ0FBQyxJQUFJLEVBQUUsSUFBSSxDQUFDLENBQUE7Z0JBRXBFLElBQUksZUFBZSxFQUFFO29CQUNuQixLQUFLLENBQUMsSUFBSSxDQUNMLE1BQU0sc0NBQWlDLEVBQUUsK0JBQTBCLFFBQVUsQ0FDakYsQ0FBQTtvQkFDRCxJQUFJO3dCQUNGLHdCQUFnQixDQUFDLEVBQUUsRUFBRSxRQUFRLEVBQUUsZ0JBQWdCLEVBQUUsQ0FBQyxDQUFDLE9BQU8sRUFBRSxRQUFRLENBQUMsQ0FBQTtxQkFDdEU7b0JBQUMsT0FBTyxLQUFLLEVBQUU7d0JBQ2QsS0FBSyxDQUFDLEtBQUssQ0FBSSxNQUFNLDRCQUF5QixDQUFDLENBQUE7d0JBQy9DLEtBQUssQ0FBQyxLQUFLLENBQUMsS0FBSyxDQUFDLENBQUE7cUJBQ25CO2lCQUNGO3FCQUFNO29CQUNMLEtBQUssQ0FBQyxLQUFLLENBQUksTUFBTSxvQkFBZSxRQUFRLG1CQUFnQixDQUFDLENBQUE7aUJBQzlEOzs7O0tBQ0Y7Q0FDRixDQUFBIn0=
