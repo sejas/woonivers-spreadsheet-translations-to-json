@@ -44,7 +44,7 @@ function run(argv) {
             switch (_a.label) {
                 case 0:
                     cli = build()
-                        .brand('woo:translate')
+                        .brand('woo-translate')
                         .src(__dirname)
                         .plugins('./node_modules', { matching: 'woo-translate-*', hidden: true })
                         .help() // provides default for help, h, --help, -h
