@@ -43,6 +43,13 @@ woo-translate --path=some/local/path/to/your/project --id=1B-THIS-IS-THE-GSPREAD
 woo-translate --path=some/local/path/to/your/project --id=1B-THIS-IS-THE-GSPREADSHEET-ID --langs=en,es,ru,fr
 ```
 
+## Publishing to NPM
+
+```shell
+$ npm run build
+$ npm publish
+```
+
 # License
 
 MIT - see LICENSE
