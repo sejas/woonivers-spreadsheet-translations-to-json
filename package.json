@@ -1,6 +1,6 @@
 {
   "name": "woo-translate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "woo-translate CLI",
   "private": true,
   "bin": {
