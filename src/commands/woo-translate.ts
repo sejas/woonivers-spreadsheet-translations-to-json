@@ -21,7 +21,7 @@ module.exports = {
      */
     if (!path) {
       print.error(
-        'You must specify the path where you want to save the `${lang}.json` files'
+        `${PREFIX} You must specify the *path* where you want to save the "{lang}.json" files`
       )
       error = true
     }
@@ -29,7 +29,7 @@ module.exports = {
      * Error Google Spreadsheet ID
      */
     if (!path) {
-      print.error('You must specify the *Google Spreadsheat ID*')
+      print.error(`${PREFIX} You must specify the *id* of Google Spreadsheat`)
       error = true
     }
 
@@ -48,11 +48,11 @@ module.exports = {
       try {
         generateJsonFrom(id, fullPath, langsToTranslate, !!verbose, finished)
       } catch (error) {
-        print.error('Ups!, we got an error.')
+        print.error(`${PREFIX} Ups!, we got an error.`)
         print.error(error)
       }
     } else {
-      print.error(`Given path ${fullPath} doesn't exist`)
+      print.error(`${PREFIX} Given path ${fullPath} doesn't exist`)
     }
   }
 }
