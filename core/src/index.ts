@@ -1,24 +1,23 @@
 //tslint:disable
 import fs = require('fs')
-import path = require('path')
 import { google } from 'googleapis'
 import readline = require('readline')
 
-import { writeToFile } from './services'
+import { CREDENTIALS_PATH, TOKEN_PATH } from './config'
+import WooTranslate from './woo-translate'
+import Log from './log'
 
 // const spreadsheetId = "SOME-SPREADSHEET-ID"
 // const destinationPath = `${PROJECT_PATH}/../../src/i18n`
 
 export const generateJsonFrom = (
   spreadsheetId: string,
-  destinationPath: string
+  destinationPath: string,
+  langKeys: string[], //example: ["en", "es"]
+  debug = false,
+  callbackGlobal = (lang: string) => null
 ) => {
-  return 'FIN'
-  const PROJECT_USER_PATH = `${require('os').homedir()}/.woo`
-  const TOKEN_PATH = `${PROJECT_USER_PATH}/woo-token.json`
-  const CREDENTIALS_PATH = `${PROJECT_USER_PATH}/woo-credentials.json`
-  const PROJECT_PATH = `${__dirname}/..`
-
+  const log = new Log(debug)
   // If modifying these scopes, delete token.json.
   const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
   // The file token.json stores the user's access and refresh tokens, and is
@@ -64,7 +63,7 @@ export const generateJsonFrom = (
       access_type: 'offline',
       scope: SCOPES
     })
-    console.log('Authorize this app by visiting this url:', authUrl)
+    log.info(`Authorize this app by visiting this url: ${authUrl}`)
     const rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout
@@ -79,7 +78,7 @@ export const generateJsonFrom = (
         // Store the token to disk for later program executions
         fs.writeFile(TOKEN_PATH, JSON.stringify(token), err => {
           if (err) console.log(err)
-          console.log('Token stored to', TOKEN_PATH)
+          log.info(`Token stored to ${TOKEN_PATH}`)
         })
         callback(oAuth2Client)
       })
@@ -98,15 +97,19 @@ export const generateJsonFrom = (
         spreadsheetId,
         range: 'translations'
       },
-      (err, res) => {
+      async (err, res) => {
         if (err) return console.log('--> The API returned an error: ' + err)
         const rows = res.data.values
         if (rows.length > 1) {
           try {
-            const wooTranslation = new WooTranslate(rows.slice(1))
+            const wooTranslation = new WooTranslate(
+              rows.slice(1),
+              langKeys,
+              log
+            )
             // console.log(wooTranslation.toJSON())
-            console.log('saving to files')
-            wooTranslation.saveToFiles(true)
+            log.info('saving to files')
+            await wooTranslation.saveToFiles(destinationPath, callbackGlobal)
           } catch (error) {
             console.log('--> Error catched: ', { error })
           }
@@ -115,119 +118,5 @@ export const generateJsonFrom = (
         }
       }
     )
-  }
-
-  /**
-   * WooLang: it manges the translations
-   */
-  class WooLang {
-    langs = {}
-    constructor(langsArray?: string[]) {
-      for (const lang of langsArray) {
-        this.addLang(lang)
-      }
-    }
-    get langKeys() {
-      return Object.keys(this.langs)
-    }
-    addLang(lang) {
-      this.langs[lang] = {}
-    }
-    addSection(section: string) {
-      for (const lang of this.langKeys) {
-        this.langs[lang][section] = {}
-      }
-    }
-    addTrasnlationToSection(section: string, [key, ...row]: string[]) {
-      debugger
-      let index = 0
-      for (const lang of this.langKeys) {
-        const [firstKey, secondKey] = key.split('.')
-        if (secondKey) {
-          this.langs[lang][section][firstKey] = {
-            ...this.langs[lang][section][firstKey],
-            [secondKey]: row[index++]
-          }
-        } else {
-          this.langs[lang][section][firstKey] = row[index++]
-        }
-      }
-    }
-  }
-
-  /**
-   * WooTranslate: it reads rows , and write the WooLang into the right files
-   */
-  class WooTranslate {
-    private langKeys = ['en', 'es']
-    rows = []
-    // The lang keys should be alphebatized
-    wooLangs = new WooLang(this.langKeys)
-    pathToSave = `${PROJECT_PATH}`
-
-    constructor(rows: string[]) {
-      this.rows = rows
-      this.read()
-    }
-    private read() {
-      let currentSection = null
-      let index = 1
-      for (const row of this.rows) {
-        console.log(`Reading ${index} --- ${row}`)
-        const key = row[0]
-        switch (row.length) {
-          case 0:
-            // We've finished
-            console.log(
-              `=========================\n-------------------> finished ! at line ${index} =========================\n`
-            )
-            return
-          case 1:
-            // create a new section
-            currentSection = key
-            this.wooLangs.addSection(key)
-            break
-          default:
-            if (row.length < this.langKeys.length) {
-              console.warn(`MISSING TRANSLATION at line ${index}`, { row })
-            }
-            if (currentSection) {
-              this.wooLangs.addTrasnlationToSection(currentSection, row)
-            } else {
-              throw new Error(`Translations without section at line: ${index}`)
-            }
-            break
-        }
-        index++
-      }
-      // This neve sholud be executed
-      throw new Error(
-        'Please add a blank line to se the end of the spreadsheet'
-      )
-    }
-
-    toJSON() {
-      return this.wooLangs.langs
-    }
-
-    async saveToFiles(copyToProject?: boolean) {
-      for (const lang of this.langKeys) {
-        const fileName = `${lang}.json`
-        const localFile = `${this.pathToSave}/${fileName}`
-        console.log(`Saving ${fileName}`)
-        await writeToFile(localFile, this.wooLangs.langs[lang])
-        if (copyToProject) {
-          const destinationFile = `${destinationPath}/${fileName}`
-          fs.copyFile(localFile, destinationFile, err => {
-            if (err) throw err
-            console.log(`- [x] Copied ${localFile} to ${destinationFile}.`)
-            fs.unlink(localFile, err => {
-              if (err) throw err
-              console.log(`- [x] Deleted ${localFile}.`)
-            })
-          })
-        }
-      }
-    }
   }
 }
