@@ -1,25 +1,48 @@
 # woo-translate CLI
 
-A CLI for woo-translate.
+A CLI for extracting the texts from a spreadsheet and saving them into local files.
 
-## Customizing your CLI
+## Requirements:
 
-Check out the documentation at https://github.com/infinitered/gluegun/tree/master/docs.
+You need this folder: ~/.woo
+There you must save the Google Credentials Config file:
 
-## Publishing to NPM
+```json
+{
+  "installed": {
+    "client_id": "aoisdjfaoñjdfañosifjañosdfij.apps.googleusercontent.com",
+    "project_id": "great-app-1111111111",
+    "client_secret": "keepthissecret",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://www.googleapis.com/oauth2/v3/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob", "http://localhost"]
+  }
+}
+```
 
-To package your CLI up for NPM, do this:
+Where `client_id`, `project_id`, `client_secret` must be modified with your project info
 
-```shell
-$ npm login
-$ npm whoami
-$ npm lint
-$ npm test
-(if typescript, run `npm run build` here)
-$ npm publish
+## Commands:
+
+### TRANSLATE EN, ES
+
+```sh
+woo-translate --path=some/local/path/to/your/project --id=1B-THIS-IS-THE-GSPREADSHEET-ID
+```
+
+### TRANSLATE EN, ES and show DEBUG log
+
+```sh
+woo-translate --path=some/local/path/to/your/project --id=1B-THIS-IS-THE-GSPREADSHEET-ID --verbose
+```
+
+### SPECIFY YOUR LANGUAGES
+
+```sh
+woo-translate --path=some/local/path/to/your/project --id=1B-THIS-IS-THE-GSPREADSHEET-ID --langs=en,es,ru,fr
 ```
 
 # License
 
 MIT - see LICENSE
-
