@@ -46,7 +46,6 @@ woo-translate --path=some/local/path/to/your/project --id=1B-THIS-IS-THE-GSPREAD
 ## Publishing to NPM
 
 ```shell
-$ npm run build
 $ npm publish
 ```
 
