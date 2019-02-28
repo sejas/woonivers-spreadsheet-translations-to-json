@@ -1,5 +1,5 @@
 {
-  "name": "woo-translate",
+  "name": "@woonivers/woo-translate",
   "version": "0.0.6",
   "description": "woo-translate CLI",
   "bin": {
