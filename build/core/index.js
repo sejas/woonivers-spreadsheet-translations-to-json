@@ -42,7 +42,7 @@ var readline = require("readline");
 var config_1 = require("./config");
 var woo_translate_1 = require("./woo-translate");
 var log_1 = require("./log");
-// const spreadsheetId = "SOME-SPREADSHEET-ID"
+// const spreadsheetId = "1BVD2Lw8mhQcK3KUhO-OSIOa5D3-eVVs3gF28NOfZ9uA"
 // const destinationPath = `${PROJECT_PATH}/../../src/i18n`
 exports.generateJsonFrom = function (spreadsheetId, destinationPath, langKeys, //example: ["en", "es"]
 debug, callbackGlobal) {

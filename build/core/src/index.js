@@ -51,7 +51,7 @@ var fs = require("fs");
 var googleapis_1 = require("googleapis");
 var readline = require("readline");
 var services_1 = require("./services");
-// const spreadsheetId = "SOME-SPREADSHEET-ID"
+// const spreadsheetId = "1BVD2Lw8mhQcK3KUhO-OSIOa5D3-eVVs3gF28NOfZ9uA"
 // const destinationPath = `${PROJECT_PATH}/../../src/i18n`
 exports.generateJsonFrom = function (spreadsheetId, destinationPath) {
     return 'FIN';

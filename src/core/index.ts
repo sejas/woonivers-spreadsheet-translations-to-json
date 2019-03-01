@@ -7,9 +7,6 @@ import { CREDENTIALS_PATH, TOKEN_PATH } from './config'
 import WooTranslate from './woo-translate'
 import Log from './log'
 
-// const spreadsheetId = "SOME-SPREADSHEET-ID"
-// const destinationPath = `${PROJECT_PATH}/../../src/i18n`
-
 export const generateJsonFrom = (
   spreadsheetId: string,
   destinationPath: string,

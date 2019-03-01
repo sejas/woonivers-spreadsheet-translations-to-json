@@ -40,4 +40,4 @@ Translate folder should be placed in WooniversApp/woo-scripts/translate
 
 ## What it does?
 
-This project fetchs the data of the [woonivers translation spreadsheet](https://docs.google.com/spreadsheets/d/SOME-SPREADSHEET-ID/edit#gid=0), write the languages into data folder and copy those files into the Woonivers App project.
+This project fetchs the data of the [woonivers translation spreadsheet](https://docs.google.com/spreadsheets/d/1BVD2Lw8mhQcK3KUhO-OSIOa5D3-eVVs3gF28NOfZ9uA/edit#gid=0), write the languages into data folder and copy those files into the Woonivers App project.
