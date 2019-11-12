@@ -43,7 +43,7 @@
     "tslint": "5.13.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "8.0.1",
-    "prettier": "1.16.4",
+    "prettier": "1.19.1",
     "jest": "23.6.0",
     "@types/gapi": "0.0.36",
     "@types/node-fetch": "2.1.6"
