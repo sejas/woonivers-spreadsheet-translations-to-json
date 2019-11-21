@@ -42,7 +42,7 @@
     "ts-jest": "23.10.5",
     "tslint": "5.13.0",
     "tslint-config-prettier": "1.18.0",
-    "tslint-config-standard": "8.0.1",
+    "tslint-config-standard": "9.0.0",
     "prettier": "1.16.4",
     "jest": "23.6.0",
     "@types/gapi": "0.0.36",
