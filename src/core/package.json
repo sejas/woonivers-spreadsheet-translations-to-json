@@ -20,6 +20,6 @@
     "@types/node-fetch": "2.1.6",
     "concurrently": "4.1.0",
     "nodemon": "1.18.10",
-    "typescript": "3.3.3333"
+    "typescript": "3.9.10"
   }
 }
