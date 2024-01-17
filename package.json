@@ -46,7 +46,7 @@
     "prettier": "1.16.4",
     "jest": "23.6.0",
     "@types/gapi": "0.0.36",
-    "@types/node-fetch": "2.1.6"
+    "@types/node-fetch": "2.6.11"
   },
   "jest": {
     "preset": "ts-jest",
